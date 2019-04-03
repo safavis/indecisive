@@ -1,0 +1,12 @@
+.headerText {
+    text-align: center;
+}
+.navbar {
+    background-color: #FF9543;
+}
+.navbar-item {
+    color:white;
+}
+.container {
+    max-width: 25%;
+}
