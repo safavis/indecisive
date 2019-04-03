@@ -10,7 +10,7 @@ const config = {
 
 firebase.initializeApp(config)
 
-const APIkey = {
+const apiKey = {
   method: "GET",
   mode: "cors",
   cache: "no-cache",
@@ -23,7 +23,7 @@ const APIkey = {
   body: JSON.stringify(data), // body data type must match "Content-Type" header
 }
 
-fetch(url, options)
+fetch(url, apiKey)
   .then(r => r.json())
   .then(r => {
     console.log('here is the response: ', r)
