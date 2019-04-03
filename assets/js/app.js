@@ -1,6 +1,6 @@
 let drinkWords =["SHOT O'CLOCK!", "It's 5 o'clock somwhere!", "Beer is proof that God loves us and wants us to be happy.",
 "DILLY DILLY!", "Alcohol may be man’s worst enemy, but the Bible says love your enemy.", "Everybody’s got to believe in something. I believe I’ll have another beer."]
-
+// On click fetchs and randomize returned data
 document.addEventListener('click', e =>{
     e.preventDefault()
     let getBeerCity = document.getElementById('cityVal').value
@@ -31,6 +31,7 @@ document.addEventListener('click', e =>{
                 console.log(ranWords)
                 console.log(ranBrew)
                 console.log(r)
+                // Using result of 1st request to use in 2nd request
                 return fetch('http://beermapping.com/webservice/locimage/b7e0022555c2b92e984c3bc704449aba/'+ ranBrew.id + '&s=json')
             }).then(data => data.json())
                 .then(r =>{
