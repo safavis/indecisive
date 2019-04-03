@@ -48,56 +48,76 @@
     </div>
   </nav>
 
-  <div id="contactforms">
-    <div class="field contact-input">
-      <label class="label">Name</label>
-      <div class="control">
-        <input class="input" type="text" placeholder="Your name">
-      </div>
-    </div>
+<article class="messages message is-success">
+  <div class="message-header">
+    <p>Success</p>
+    <button class="messages delete" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    Your message was sent successfully. Thank you for your feedback!
+  </div>
+</article>
 
-    <div class="field contact-input">
-      <label class="label">Email</label>
-      <div class="control has-icons-left has-icons-right">
-        <input class="input" type="email" placeholder="Email input" value="email@email.com">
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-        <span class="icon is-small is-right">
-          <i class="fas fa-exclamation-triangle"></i>
-        </span>
-      </div>
-    </div>
-
-    <div class="field contact-input">
-      <label class="label">Subject</label>
-      <div class="control">
-        <div class="select">
-          <select>
-            <option>Questions</option>
-            <option>Problems with app</option>
-          </select>
+<article class="messages message is-danger">
+  <div class="message-header">
+    <p>Attention</p>
+    <button class="messages delete" aria-label="delete"></button>
+  </div>
+  <div class="message-body">
+    Please fill out the form completely!
+  </div>
+</article>
+  
+  <div id="contactcontainer">
+    <div id="contactforms">
+      <div class="field contact-input">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input name" type="text" placeholder="Your name">
         </div>
       </div>
-    </div>
 
-    <div class="field contact-input">
-      <label class="label">Message</label>
-      <div class="control">
-        <textarea class="textarea" placeholder="Textarea"></textarea>
+      <div class="field contact-input">
+        <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input email" type="email" placeholder="yourEmail@email.com" value="">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
       </div>
-    </div>
 
-    <div class="field is-grouped contact-input">
-      <div class="control">
-        <button class="button is-link">Submit</button>
+      <div class="field contact-input">
+        <label class="label">Subject</label>
+        <div class="control">
+          <div class="select">
+            <select class="option">
+              <option value="questions">Questions</option>
+              <option value="problems">Problems with app</option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div class="control">
-        <button class="button is-text">Cancel</button>
+
+      <div class="field contact-input">
+        <label class="label">Message</label>
+        <div class="control">
+          <textarea class="textarea userMessage" placeholder="Tell us what's on your mind"></textarea>
+        </div>
+      </div>
+
+      <div class="field is-grouped contact-input">
+        <div class="control">
+          <button class="button is-link contactsbmt">Submit</button>
+        </div>
       </div>
     </div>
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
   <script src="./assets/js/app.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </body>

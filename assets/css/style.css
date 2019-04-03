@@ -1,11 +1,13 @@
 .headerText {
     text-align: center;
 }
+
 .navbar {
     background-color: #FF9543;
 }
+
 .navbar-item {
-    color:white;
+    color: white;
 }
 
 .contact-input {
@@ -15,4 +17,12 @@
 
 #contactforms {
     margin-top: 100px;
+}
+
+.is-success, .is-danger {
+    display: none;
+    width: 40%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
 }
