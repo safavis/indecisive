@@ -7,3 +7,12 @@
 .navbar-item {
     color:white;
 }
+
+.contact-input {
+    width: 50%;
+    margin: auto;
+}
+
+#contactforms {
+    margin-top: 100px;
+}
