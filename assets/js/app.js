@@ -12,7 +12,8 @@ let db = firebase.firestore()
 // 
 
 // Yelp API code
-let URL = 'https://api.yelp.com/v3/businesses/search?location=40515&term&categories=vet&limit=10';
+// let URL = 'https://api.yelp.com/v3/businesses/search?location=40515&term&categories=vet&limit=10';
+let URL = 'https://api.yelp.com/v3/businesses/search?location=92703&limit=10';
 
 const API_KEY = 'M7IgpDGg-9kXeDXpl5Yj9A9_33reRjvfXANnx3RvJzphIo_pAXUEvP5FubmdzBV32ehGAyXtlzo0_hjlxzrBPi4O705EnwbTMXBu1v3rbP78tARuwNYSElA1WBqjXHYx';
 
@@ -27,18 +28,29 @@ fetch(queryURL, {
     "Access-Control-Allow-Origin": "*",
     "Authorization": `Bearer ${API_KEY}`
   }
-}).then(r => r.json())
-
-  .then(data => {
-    console.log(data)
+})
+  .then(r => r.json())
+  .then(r => {
+    console.log(r)
+    // r.businesses.forEach(function (event) {
+    for (let i = 0; i < r.businesses.length; i++) {
+      let newListing = document.createElement(`div`)
+      newListing.innerHTML = `
+    <p>${r.businesses[i].name}</p>
+    <p>${r.businesses[i].location.display_address[0]}, ${r.businesses[i].location.display_address[1]}</p>
+    <p>${r.businesses[i].display_phone}</p>
+    `
+      document.querySelector(`#test`).append(newListing)
+    }
+    // })
   });
 // 
 
 // Contact Form Firebase Submissions:
-  // Array of buttons that close messages
+// Array of buttons that close messages
 const deleteBtns = document.querySelectorAll('.delete');
 
-  // Submit form to Firebase
+// Submit form to Firebase
 document.querySelector(`.contactsbmt`).addEventListener(`click`, e => {
   e.preventDefault()
   let x = document.querySelector(`.option`).selectedIndex
@@ -75,9 +87,10 @@ const hideElem = (elem) => {
 for (let i = 0; i < deleteBtns.length; i++) {
   // console.log("Delete Item", deleteBtns[i])
   deleteBtns[i].addEventListener(`click`, e => {
-    hideElem()
+    console.log("element", e.target)
+    hideElem(e.target.closest('article'))
   })
 }
-// 
+//
 
 

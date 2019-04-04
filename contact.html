@@ -80,7 +80,7 @@
       <div class="field contact-input">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input email" type="email" placeholder="yourEmail@email.com" value="">
+          <input class="input email" pattern="[^ @]*@[^ @]*" type="email" placeholder="yourEmail@email.com" value="">
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -116,6 +116,8 @@
       </div>
     </div>
   </div>
+
+  <div id="test"></div>
 
   <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
   <script src="./assets/js/app.js"></script>
