@@ -6,7 +6,16 @@
 }
 .navbar-item {
     color:white;
+    width:"100px"; 
+    height:"500px";
 }
 .container {
-    max-width: 25%;
+    max-width: 45%;
+   
+}
+.button is-info{
+    align-content: center;
+}
+.footer{
+  background-color: #FF9543; 
 }
