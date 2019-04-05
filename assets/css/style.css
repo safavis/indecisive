@@ -27,7 +27,32 @@
     text-align: center;
 }
 
-#test {
+#results {
     margin: auto;
     text-align: center;
+}
+
+.business-img {
+    width: 200px;
+    height: 200px;
+}
+
+.card {
+    width: 40%;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.card {
+    margin-top: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+    .card, .messages, .contact-input {
+        width: 80%
+    }
+
 }
