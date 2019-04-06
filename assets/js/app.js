@@ -60,12 +60,16 @@ document.querySelector(`.search`).addEventListener('click', e => {
           document.querySelector(`#results`).innerHTML = ``
           document.querySelector(`#results`).append(newListing)
           let businessHours = r.hours[0].open
-          // businessHours.forEach(item => {
-          //   console.log(item)
-          //   // Create elem, add innerHTML, append to results div
-          //   let hoursElem = document.createElement(`p`)
-          //   hoursElem.innerHTML = 
-          // })
+          businessHours.forEach(item => {
+            // console.log(item)
+            let start = item.start 
+            console.log(start)
+            moment(start, hhmm)
+            // let end = 
+            // Create elem, add innerHTML, append to results div
+            // let hoursElem = document.createElement(`p`)
+            // hoursElem.innerHTML = 
+          })
         })
     })
   document.querySelector(`.search2`).style.display = `block`
