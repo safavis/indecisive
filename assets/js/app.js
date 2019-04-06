@@ -13,7 +13,7 @@ var config = {
   let user=firebase.firestore()
   let name
 document.addEventListener('click', e =>{
-    e.preventDefault()
+   // e.preventDefault()
     if(e.target.id === 'randomData'){
         let getBeerCity = document.getElementById('cityVal').value
         fetch('http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/'+ getBeerCity + '&s=json')
@@ -60,6 +60,16 @@ document.addEventListener('click', e =>{
         user.collection('user_login').doc(name).set({'name':name,'email':email,'username':username,'password':password})
     }
 })
+
+//adding login stuff
+document.querySelector(".signUpButton").addEventListener('click',({target})=>{
+    console.log(target.className)
+    if(target.className==="signUpButton"){
+
+    }
+})
+
+
 // Yelp API code
 // let URL = 'https://api.yelp.com/v3/businesses/search?location=40515&term&categories=vet&limit=10';
 // let URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=10`;
