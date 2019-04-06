@@ -7,6 +7,15 @@
 }
 
 .navbar-item {
+    color:white;
+}
+.signin_column{
+    text-align: center;
+    margin-left: 10px;
+    background-color: #77EEFF;
+    color: midnightblue;
+    font-family: 'Fjalla One', sans-serif;
+
     color: white;
 }
 
@@ -64,3 +73,6 @@
     margin-bottom: 20px;
     width: 40%
 }
+.footer{
+    background-color: #FF9543; 
+  }
