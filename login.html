@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <!-- <a class="navbar-item" href="#">
+            <a class="navbar-item" href="#">
                 Indecisive
             </a>
             <a class="navbar-item">
@@ -22,7 +22,7 @@
             <a class="navbar-item">
                 Contact Us
             </a>
-            -->
+           
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
                 
@@ -63,24 +63,33 @@
             <div class="columns ">
                 <div class="column is-half">
                         <div class="field">
-                                <label class="label">Username</label>
+                          <label class="label">Your Name</label>
+                          <div class="control">
+                            <input class="input name" type="text" placeholder="Name">
+                          </div>
+                          <label class="label">Email</label>
+                          <div class="control">
+                            <input class="input email" type="text" placeholder="Email">
+                          </div>
+                          
+                          <label class="label">Username</label>
                                 <div class="control">
-                                  <input class="input" type="text" placeholder="User name">
+                                  <input class="input usernm" type="text" placeholder="User name">
                                 </div>
                               </div>
                               
                               <div class="field">
                                 <label class="label">Password</label>
                                 <div class="control has-icons-left has-icons-right">
-                                  <input class="input " type="password" placeholder="Password" value="">
+                                  <input class="input pass " type="password" placeholder="Password" value="">
                                 </div>
                                </div>
                                <div class="field is-grouped">
                                     <div class="control">
-                                      <button class="button is-link sbmt">Submit</button>
+                                      <button class="button is-link" id="signup">Submit</button>
                                     </div>
                                     <div class="control">
-                                      <button class="button is-text">Cancel</button>
+                                      <button class="button is-text" id="canc">Cancel</button>
                                     </div>
                                </div>
                                   <!-- <span class="icon is-small is-left">
@@ -109,8 +118,7 @@
         </div> -->
     </section> 
 
-
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="./assets/js/app.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</body>
+  </body>
 </html>
