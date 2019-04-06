@@ -36,7 +36,40 @@
     text-align: center;
 }
 
-#test {
+#results {
     margin: auto;
     text-align: center;
+}
+
+.business-img {
+    width: 200px;
+    height: 200px;
+}
+
+.card {
+    width: 40%;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .card, .messages, .contact-input, .search2 {
+        width: 80%
+    }
+}
+
+#new-result, #multiple {
+    margin: auto;
+    text-align: center;
+}
+
+.search2, .more {
+    display: none;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 40%
 }
