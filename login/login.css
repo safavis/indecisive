@@ -1,9 +1,12 @@
+
 .headerText {
     text-align: center;
 }
 .navbar {
     background-color: #FF9543;
 }
+
+
 .navbar-item {
     color:white;
     width:"100px"; 
@@ -11,11 +14,10 @@
 }
 .container {
     max-width: 45%;
+    background-color: #F4FEFF;
    
 }
-.button is-info{
-    align-content: center;
-}
+
 .footer{
   background-color: #FF9543; 
 }
