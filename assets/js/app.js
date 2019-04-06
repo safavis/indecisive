@@ -13,7 +13,7 @@ var config = {
   let user=firebase.firestore()
   let name
 document.addEventListener('click', e =>{
-    e.preventDefault()
+   // e.preventDefault()
     if(e.target.id === 'randomData'){
         let getBeerCity = document.getElementById('cityVal').value
         fetch('http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/'+ getBeerCity + '&s=json')
