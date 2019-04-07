@@ -8,4 +8,14 @@
     messagingSenderId: "848170258525"
   };
   firebase.initializeApp(config);
+ let db=firebase.firestore()
+ let userfound=false
+  document.querySelector(".loginSubmit").addEventListener("click",({target})=>{
+      userfound=false
+      db.collection('user_login').get()
+      .then(r=>{
+            console.log(r.docs)
+        });
+    
+  })
  
