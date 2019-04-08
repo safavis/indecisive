@@ -66,8 +66,20 @@
     text-align: center;
 }
 
+#beerResults{
+    margin:auto;
+    text-align: center;
+}
+
 .search2, .more {
     display: none;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 40%
+}
+.moreBeer, .newBeer{
+    display:none;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
