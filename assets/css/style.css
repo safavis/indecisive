@@ -78,7 +78,7 @@
     margin-bottom: 20px;
     width: 40%
 }
-.moreBeer, .newBeer{
+#moreBeer, #newBeer{
     display:none;
     margin: auto;
     margin-top: 20px;

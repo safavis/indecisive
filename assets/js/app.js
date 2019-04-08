@@ -1,6 +1,6 @@
 let drinkWords =["SHOT O'CLOCK!", "It's 5 o'clock somwhere!", "Beer is proof that God loves us and wants us to be happy.",
 "DILLY DILLY!", "Alcohol may be man’s worst enemy, but the Bible says love your enemy.", "Everybody’s got to believe in something. I believe I’ll have another beer."]
-let beerImg = ['./assets/image/brew01.jpg', './assets/image/brew02.jpg', './assets/image/brew03.jpg', './assets/image/brew04.jpg', './assets/image/brew05.jpg', './assets/image/brew06.jpg' ]
+let beerImg = ['./assets/image/brew01.jpg', './assets/image/brew02.jpg', './assets/image/brew03.jpg', './assets/image/brew04.jpg', './assets/image/brew05.jpg', './assets/image/brew06.jpg', './assets/image/brew07.jpg', './assets/image/brew08.jpg', './assets/image/brew09.jpg', './assets/image/brew10.jpg' ]
 // On click fetchs and randomize returned data
 var config = {
     apiKey: "AIzaSyALJmJ2VVKSDLb7wNk3HGxdXM1OH_KfE30",
@@ -14,12 +14,12 @@ var config = {
   let user=firebase.firestore()
   let name
 //   Beer Mapping API
-document.querySelector('.search').addEventListener('click', e =>{
+document.addEventListener('click', e =>{
    // e.preventDefault()
    let beerCheck = document.querySelector('#beerCheck').checked
-    if(beerCheck === true){
+    if(beerCheck === true && e.target.className === 'button is-info search'){
         let getBeerCity = document.querySelector('.input').value
-        fetch('http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/'+ getBeerCity + '&s=json')
+        fetch(`http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
             .then( r => r.json())
             .then( r =>{
                 let ranBrew = r[Math.floor(Math.random()* r.length)]
@@ -49,18 +49,18 @@ document.querySelector('.search').addEventListener('click', e =>{
               </div>
             </div>
                 `
-                document.querySelector(`#beerResults`).innerHTML = ``
-                document.querySelector(`#beerResults`).append(beerListing)
-                document.querySelector('.newBeer').style.display = 'block'
-                document.querySelector('.moreBeer').style.display = 'block'
+                document.querySelector('#beerResults').innerHTML = ``
+                document.querySelector('#beerResults').append(beerListing)
+                document.querySelector('#newBeer').style.display = 'block'
+                document.querySelector('#moreBeer').style.display = 'block'
                 console.log(ranWords)
                 console.log(ranBrew)
             })
             .catch(console.error)  
-    } else{
-        document.querySelector(`#beerResults`).innerHTML = ``
-        document.querySelector('.newBeer').style.display = 'none'
-        document.querySelector('.moreBeer').style.display = 'none'
+    } else if(beerCheck === false){
+        document.querySelector('#beerResults').innerHTML = ``
+        document.querySelector('#newBeer').style.display = 'none'
+        document.querySelector('#moreBeer').style.display = 'none'
     }
     if(e.target.id==="signup"){
         name=document.querySelector(".name").value
@@ -71,17 +71,18 @@ document.querySelector('.search').addEventListener('click', e =>{
         user.collection('user_login').doc(name).set({'name':name,'email':email,'username':username,'password':password})
     }
 })
-document.querySelector('.moreBeer').addEventListener('click', e =>{
+
+document.querySelector('#moreBeer').addEventListener('click', e =>{
     document.querySelector(`#beerResults`).innerHTML = ``
          let getBeerCity = document.querySelector('.input').value
-         fetch('http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/'+ getBeerCity + '&s=json')
+         fetch(`http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
             .then(r => r.json())
             .then(r => {
                 console.log(r)
-                for(let i = 0; i <r.length;i++){ 
+                console.log(getBeerCity)
+                for(let i = 0; i <10;i++){ 
                     let beerListing = document.createElement('div')
                     beerListing.innerHTML = `
-                    
                     <div class="card" id="beerCard">
                     <div class="card-image">
                       <figure class="image is-4by3">
@@ -103,8 +104,8 @@ document.querySelector('.moreBeer').addEventListener('click', e =>{
                   </div>
                 </div>`
                 document.querySelector('#beerResults').append(beerListing)
-                document.querySelector('.newBeer').style.display = 'block'
-                document.querySelector('.moreBeer').style.display = 'block'
+                document.querySelector('#newBeer').style.display = 'block'
+                document.querySelector('#moreBeer').style.display = 'block'
             }
             })
         })
