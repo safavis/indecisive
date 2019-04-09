@@ -88,18 +88,17 @@ const ratingFunc = () => {
   document.querySelector(`.ratingsDiv`).append(starImg)
 }
 
+// Search bar button
 document.querySelector(`.search`).addEventListener('click', e => {
   searchInput = document.querySelector(`.input`).value
   URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=25`;
   queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
-
   fetch(queryURL, yelpObject)
     .then(r => r.json())
     .then(r => {
       let i = Math.floor(Math.random() * 25)
       let currentBusinessId = r.businesses[i].id
-
-      // New fetch with current business
+      // New fetch with selected business
       URL = `https://api.yelp.com/v3/businesses/${currentBusinessId}`
       queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
       fetch(queryURL, yelpObject)
@@ -109,38 +108,38 @@ document.querySelector(`.search`).addEventListener('click', e => {
           let newListing = document.createElement(`div`)
           if (r.hours[0].open.length === 7) {
             newListing.innerHTML = `
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img class="business-img" src="${r.image_url}" alt="${r.name}">
-          </figure>
-        </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">${r.name}</p>
-            <div class ="ratingsDiv content">
-              <h5>Rating out of 5:</h5>
-            </div>
-          </div>
-        </div>
-      <div class="content columns">
-        <div class="location column is-half">
-        <h5>Address:</h5>
-        <p class="address"></p>
-        <h5>Phone number:</h5>
-        <p>${r.display_phone}</p>
-        <h5>For customer reviews and menus, <a href="${r.url}">click here</a></h5>
-        </div>
-        <div class="hours column is-half">
-          <div>
-            <h5>Business hours:</h5>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    `
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img class="business-img" src="${r.image_url}" alt="${r.name}">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-4">${r.name}</p>
+                      <div class ="ratingsDiv content">
+                        <h5>Rating out of 5:</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content columns">
+                    <div class="location column is-half">
+                      <h5>Address:</h5>
+                      <p class="address"></p>
+                      <h5>Phone number:</h5>
+                      <p>${r.display_phone}</p>
+                      <h5>For customer reviews and menus, <a href="${r.url}">click here</a></h5>
+                    </div>
+                    <div class="hours column is-half">
+                      <div>
+                        <h5>Business hours:</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              `
             document.querySelector(`#results`).innerHTML = ``
             document.querySelector(`#results`).append(newListing)
             for (let i = 0; i < r.location.display_address.length; i++) {
@@ -156,7 +155,6 @@ document.querySelector(`.search`).addEventListener('click', e => {
             businessHours.forEach((item, i) => {
               let openingHours = moment(item.start, `HHmm`).format(`hh:mm a`)
               let closingHours = moment(item.end, `HHmm`).format(`hh:mm a`)
-              // Create elem, add innerHTML, append to results div
               let hoursElem = document.createElement(`p`)
               hoursElem.innerHTML = `
             <p>${weekdays[i]}: ${openingHours} - ${closingHours}</p>
@@ -166,33 +164,33 @@ document.querySelector(`.search`).addEventListener('click', e => {
             })
           } else {
             newListing.innerHTML = `
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img class="business-img" src="${r.image_url}" alt="${r.name}">
-          </figure>
-        </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">${r.name}</p>
-            <div class ="ratingsDiv content">
-              <h5>Rating out of 5:</h5>
-            </div>
-          </div>
-        </div>
-      <div class="content columns">
-        <div class="location column is-half">
-        <h5>Address:</h5>
-        <p class="address"></p>
-        <h5>Phone number:</h5>
-        <p>${r.display_phone}</p>
-        <h5>For business hours, customer reviews, and menus, <a href="${r.url}">click here</a></h5>
-        </div>
-        </div>
-      </div>
-    </div>
-    `
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img class="business-img" src="${r.image_url}" alt="${r.name}">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-4">${r.name}</p>
+                      <div class ="ratingsDiv content">
+                        <h5>Rating out of 5:</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content columns">
+                    <div class="location column is-half">
+                      <h5>Address:</h5>
+                      <p class="address"></p>
+                      <h5>Phone number:</h5>
+                      <p>${r.display_phone}</p>
+                      <h5>For business hours, customer reviews, and menus, <a href="${r.url}">click here</a></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              `
             document.querySelector(`#results`).innerHTML = ``
             document.querySelector(`#results`).append(newListing)
             for (let i = 0; i < r.location.display_address.length; i++) {
@@ -209,8 +207,8 @@ document.querySelector(`.search`).addEventListener('click', e => {
   document.querySelector(`.search2`).style.display = `block`
   document.querySelector(`.more`).style.display = `block`
 });
-//
 
+// Next option button
 document.querySelector(`.search2`).addEventListener('click', e => {
   searchInput = document.querySelector(`.input`).value
   URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=25`;
@@ -221,7 +219,6 @@ document.querySelector(`.search2`).addEventListener('click', e => {
     .then(r => {
       let i = Math.floor(Math.random() * 25)
       let currentBusinessId = r.businesses[i].id
-
       // New fetch with current business
       URL = `https://api.yelp.com/v3/businesses/${currentBusinessId}`
       queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
@@ -232,38 +229,38 @@ document.querySelector(`.search2`).addEventListener('click', e => {
           let newListing = document.createElement(`div`)
           if (r.hours[0].open.length === 7) {
             newListing.innerHTML = `
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img class="business-img" src="${r.image_url}" alt="${r.name}">
-          </figure>
-        </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">${r.name}</p>
-            <div class ="ratingsDiv content">
-              <h5>Rating out of 5:</h5>
-            </div>
-          </div>
-        </div>
-      <div class="content columns">
-        <div class="location column is-half">
-        <h5>Address:</h5>
-        <p class="address"></p>
-        <h5>Phone number:</h5>
-        <p>${r.display_phone}</p>
-        <h5>For customer reviews and menus, <a href="${r.url}">click here</a></h5>
-        </div>
-        <div class="hours column is-half">
-          <div>
-            <h5>Business hours:</h5>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    `
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img class="business-img" src="${r.image_url}" alt="${r.name}">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-4">${r.name}</p>
+                      <div class ="ratingsDiv content">
+                        <h5>Rating out of 5:</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content columns">
+                    <div class="location column is-half">
+                      <h5>Address:</h5>
+                      <p class="address"></p>
+                      <h5>Phone number:</h5>
+                      <p>${r.display_phone}</p>
+                      <h5>For customer reviews and menus, <a href="${r.url}">click here</a></h5>
+                    </div>
+                    <div class="hours column is-half">
+                      <div>
+                        <h5>Business hours:</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              `
             document.querySelector(`#results`).innerHTML = ``
             document.querySelector(`#results`).append(newListing)
             for (let i = 0; i < r.location.display_address.length; i++) {
@@ -284,37 +281,36 @@ document.querySelector(`.search2`).addEventListener('click', e => {
             <p>${weekdays[i]}: ${openingHours} - ${closingHours}</p>
             `
               document.querySelector(`.hours`).append(hoursElem)
-
             })
           } else {
             newListing.innerHTML = `
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img class="business-img" src="${r.image_url}" alt="${r.name}">
-          </figure>
-        </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">${r.name}</p>
-            <div class ="ratingsDiv content">
-              <h5>Rating out of 5:</h5>
-            </div>
-          </div>
-        </div>
-      <div class="content columns">
-        <div class="location column is-half">
-        <h5>Address:</h5>
-        <p class="address"></p>
-        <h5>Phone number:</h5>
-        <p>${r.display_phone}</p>
-        <h5>For business hours, customer reviews, and menus, <a href="${r.url}">click here</a></h5>
-        </div>
-        </div>
-      </div>
-    </div>
-    `
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img class="business-img" src="${r.image_url}" alt="${r.name}">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-4">${r.name}</p>
+                      <div class ="ratingsDiv content">
+                        <h5>Rating out of 5:</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content columns">
+                    <div class="location column is-half">
+                      <h5>Address:</h5>
+                      <p class="address"></p>
+                      <h5>Phone number:</h5>
+                      <p>${r.display_phone}</p>
+                      <h5>For business hours, customer reviews, and menus, <a href="${r.url}">click here</a></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              `
             document.querySelector(`#results`).innerHTML = ``
             document.querySelector(`#results`).append(newListing)
             for (let i = 0; i < r.location.display_address.length; i++) {
@@ -328,10 +324,9 @@ document.querySelector(`.search2`).addEventListener('click', e => {
           }
         })
     })
-  document.querySelector(`.search2`).style.display = `block`
-  document.querySelector(`.more`).style.display = `block`
 });
 
+// Multiple results button
 document.querySelector(`.more`).addEventListener('click', e => {
   document.querySelector(`#results`).innerHTML = ``
   searchInput = document.querySelector(`.input`).value
@@ -345,28 +340,29 @@ document.querySelector(`.more`).addEventListener('click', e => {
       for (let i = 0; i < r.businesses.length; i++) {
         let newListing = document.createElement(`div`)
         newListing.innerHTML = `
-      <div class="card">
-        <div class="card-image">
-          <figure class="image is-4by3">
-            <img class="business-img" src="${r.businesses[i].image_url}" alt="${r.businesses[i].name}">
-          </figure>
-        </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4">${r.businesses[i].name}</p>
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img class="business-img" src="${r.businesses[i].image_url}" alt="${r.businesses[i].name}">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">${r.businesses[i].name}</p>
+                </div>
+              </div>
+              <div class="content">
+                <h5>Address:</h5>
+                <p>${r.businesses[i].location.display_address[0]}, ${r.businesses[i].location.display_address[1]}
+                </p>
+                <h5>Phone:</h5>
+                <p>${r.businesses[i].display_phone}</p>
+                <h5>For business hours, reviews, and menus, <a href="${r.businesses[i].url}">click here</a></h5>
+              </div>
+            </div>
           </div>
-        </div>
-      <div class="content">
-        <h5>Address:</h5>
-        <p>${r.businesses[i].location.display_address[0]}, ${r.businesses[i].location.display_address[1]}</p>
-        <h5>Phone:</h5>
-        <p>${r.businesses[i].display_phone}</p>
-        <h5>For business hours, reviews, and menus, <a href="${r.businesses[i].url}">click here</a></h5>
-        </div>
-      </div>
-    </div>
-    `
+          `
         document.querySelector(`#results`).append(newListing)
       }
     })
