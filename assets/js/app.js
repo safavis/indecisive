@@ -179,8 +179,8 @@ document.querySelector(`.search`).addEventListener('click', e => {
                       </div>
                     </div>
                   </div>
-                  <div class="content columns">
-                    <div class="location column is-half">
+                  <div class="content">
+                    <div class="location">
                       <h5>Address:</h5>
                       <p class="address"></p>
                       <h5>Phone number:</h5>
@@ -299,8 +299,8 @@ document.querySelector(`.search2`).addEventListener('click', e => {
                       </div>
                     </div>
                   </div>
-                  <div class="content columns">
-                    <div class="location column is-half">
+                  <div class="content">
+                    <div class="location">
                       <h5>Address:</h5>
                       <p class="address"></p>
                       <h5>Phone number:</h5>
