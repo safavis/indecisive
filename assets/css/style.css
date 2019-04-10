@@ -59,6 +59,7 @@ body {
 .card {
     width: 40%;
     margin: auto;
+    margin-top: 35px;
 }
 
 .title {
@@ -83,6 +84,15 @@ body {
     }
     .mainlogo {
         margin: auto;
+    }
+}
+
+@media only screen and (max-width: 584px) {
+    .btns {
+        margin-bottom: 1000px;
+    }
+    .footer {
+        margin-top: 1000px;
     }
 }
 
@@ -117,6 +127,13 @@ body {
     left: 0px;
     bottom: 0px;
     width: 100%;
+    margin-top: 1000px;
+}
+
+.btns {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 50px;
 }
 
 .hours {
@@ -136,4 +153,8 @@ body {
 
 .nameinput, .emailinput {
     width: 100%;
+}
+
+#search-section {
+    margin-bottom: 0;
 }
