@@ -57,7 +57,7 @@
 
 @media only screen and (max-width: 768px) {
     .card, .messages, .contact-input, .search2 {
-        width: 80%
+        width: 90%;
     }
 }
 
@@ -87,4 +87,24 @@
 }
 .footer{
     background-color: #FF9543; 
+    padding: 24px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
   }
+
+.hours {
+    margin-bottom: 20px;
+}
+
+.ratingsDiv {
+    margin: auto;
+    text-align: center;
+}
+
+.stars {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
