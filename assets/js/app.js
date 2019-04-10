@@ -213,13 +213,12 @@ document.querySelector(`.search2`).addEventListener('click', e => {
   searchInput = document.querySelector(`.input`).value
   URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=25`;
   queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
-
   fetch(queryURL, yelpObject)
     .then(r => r.json())
     .then(r => {
       let i = Math.floor(Math.random() * 25)
       let currentBusinessId = r.businesses[i].id
-      // New fetch with current business
+      // New fetch with selected business
       URL = `https://api.yelp.com/v3/businesses/${currentBusinessId}`
       queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
       fetch(queryURL, yelpObject)
@@ -281,6 +280,7 @@ document.querySelector(`.search2`).addEventListener('click', e => {
             <p>${weekdays[i]}: ${openingHours} - ${closingHours}</p>
             `
               document.querySelector(`.hours`).append(hoursElem)
+
             })
           } else {
             newListing.innerHTML = `
@@ -296,9 +296,6 @@ document.querySelector(`.search2`).addEventListener('click', e => {
                       <p class="title is-4">${r.name}</p>
                       <div class ="ratingsDiv content">
                         <h5>Rating out of 5:</h5>
-                      </div>
-                      <div class="categories">
-                        <h5>Categories: </h5>
                       </div>
                     </div>
                   </div>
@@ -323,11 +320,6 @@ document.querySelector(`.search2`).addEventListener('click', e => {
             }
             for (let i = 0; i < r.rating; i++) {
               ratingFunc()
-            }
-            for (let i =0; i <r.categories.length; i++) {
-              let categories = document.createElement(`p`)
-              categories.innerHTML = `${r.categories[i]}`
-              document.querySelector(`.categories`).append(categories)
             }
           }
         })
