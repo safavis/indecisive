@@ -9,6 +9,8 @@ const config = {
   messagingSenderId: "848170258525"
 };
 firebase.initializeApp(config);
+let db=firebase.firestore()
+document.querySelector(".sbmt").
 
 //togglenightmode
 const normal = "./assets/css/login.css"
