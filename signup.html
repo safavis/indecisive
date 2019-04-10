@@ -1,124 +1,121 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Indecisive</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
-
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Indecisive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
+  <link rel="icon" href="./assets/image/favicon.png">
 </head>
+
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="#">
-                Indecisive
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="./index.html">
+        <img class="navlogo" src="./assets/image/logo_ind.png" alt="Indecisive">
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="./contact.html">
+          Contact Us
+        </a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-light" href="./signup.html">
+              <strong>Sign up</strong>
             </a>
-            <a class="navbar-item">
-                Home
-            </a>  
-            <a class="navbar-item">
-                Contact Us
+            <a class="button is-light" href="./login.html">
+              Log in
             </a>
-           
+          </div>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-                
-            <!-- <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-light">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                            Log in
-                        </a>
-                    </div>
-                </div>
-            </div> -->
+      </div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <img src="./assets/image/logo_ind.png" alt="Indecisive">
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered ">
+        <div class="column is-half signin_column">
+          Not a User? Sign Up!
         </div>
-    </nav>
-    <section class="section">
-        <div class="container">
-            <div class="columns is-centered">
-                    <img src="./assets/image/c43d6e79-c83b-4994-bee3-55e9a7cbe200.png" alt="Indecisive">
-                </div>
+
+        <div class="column is-half signin_column">
+          Already Signed up? Sign In!
+        </div>
+
+      </div>
+
+      <div class="columns ">
+        <div class="column is-half">
+          <div class="field">
+            <label class="label">Your Name</label>
+            <div class="control">
+              <input class="input name" type="text" placeholder="Name">
             </div>
-    </section>
-    <section class="section">
-        <div class="container">
-            <div class="columns is-centered ">
-                    <div class="column is-half signin_column">
-                      Not a User?   Sign Up!
-                    </div>
-                    
-                    <div class="column is-half signin_column">
-                      Already Signed up?    Sign In!
-                    </div>
-                    
+            <label class="label">Email</label>
+            <div class="control">
+              <input class="input email" type="text" placeholder="Email">
             </div>
 
-            <div class="columns ">
-                <div class="column is-half">
-                        <div class="field">
-                          <label class="label">Your Name</label>
-                          <div class="control">
-                            <input class="input name" type="text" placeholder="Name">
-                          </div>
-                          <label class="label">Email</label>
-                          <div class="control">
-                            <input class="input email" type="text" placeholder="Email">
-                          </div>
-                          
-                          <label class="label">Username</label>
-                                <div class="control">
-                                  <input class="input usernm" type="text" placeholder="User name">
-                                </div>
-                              </div>
-                              
-                              <div class="field">
-                                <label class="label">Password</label>
-                                <div class="control has-icons-left has-icons-right">
-                                  <input class="input pass " type="password" placeholder="Password" value="">
-                                </div>
-                               </div>
-                               <div class="field is-grouped">
-                                    <div class="control">
-                                      <button class="button is-link" id="signup">Submit</button>
-                                    </div>
-                                    <div class="control">
-                                      <button class="button is-text" id="canc">Cancel</button>
-                                    </div>
-                               </div>
-                                  <!-- <span class="icon is-small is-left">
-                                    <i class="fas fa-user"></i>
-                                  </span>
-                                  <span class="icon is-small is-right">
-                                    <i class="fas fa-check"></i>
-                                  </span>
-                                </div>
-                                <p class="help is-success">This username is available</p> -->
-                </div>
+            <label class="label">Username</label>
+            <div class="control">
+              <input class="input usernm" type="text" placeholder="User name">
             </div>
-            <div>
-            <!-- <div class="columns is-centered">
-                <div class="field is-grouped">
-                            <p class="control is-expanded">
-                              <input class="input" type="text" placeholder="Search by City">
-                            </p>
-                            <p class="control">
-                              <a class="button is-info">
-                                Search
-                              </a>
-                            </p>
-                </div>
-            </div>
-        </div> -->
-    </section> 
+          </div>
 
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-    <script src="./assets/js/app.js"></script>
-  </body>
+          <div class="field">
+            <label class="label">Password</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input pass " type="password" placeholder="Password" value="">
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-link" id="signup">Submit</button>
+            </div>
+            <div class="control">
+              <button class="button is-text" id="canc">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <footer class="footer">
+    <div class="has-text-centered">
+      <p>
+        <strong>INDECISIVE</strong> created by <a href="https://github.com/safavis">Mahya Safavi</a>, <a
+          href="https://github.com/CDKedits">Connor Nguyen</a>, <a href="https://github.com/diennguyen90">Dien
+          Nguyen</a>, <a href="https://github.com/dantecomandante">Dante Perez</a>. The source code is
+        licensed by <a href="https://github.com/safavis/indecisive">Foreign Coders™</a> Powered By Coffee.
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+
 </html>
