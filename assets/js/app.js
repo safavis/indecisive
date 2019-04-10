@@ -297,6 +297,9 @@ document.querySelector(`.search2`).addEventListener('click', e => {
                       <div class ="ratingsDiv content">
                         <h5>Rating out of 5:</h5>
                       </div>
+                      <div class="categories">
+                        <h5>Categories: </h5>
+                      </div>
                     </div>
                   </div>
                   <div class="content">
@@ -320,6 +323,11 @@ document.querySelector(`.search2`).addEventListener('click', e => {
             }
             for (let i = 0; i < r.rating; i++) {
               ratingFunc()
+            }
+            for (let i =0; i <r.categories.length; i++) {
+              let categories = document.createElement(`p`)
+              categories.innerHTML = `${r.categories[i]}`
+              document.querySelector(`.categories`).append(categories)
             }
           }
         })
