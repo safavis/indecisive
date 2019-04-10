@@ -415,3 +415,12 @@ document.querySelector(`.more`).addEventListener('click', e => {
       }
     })
 });
+
+
+// navbar burger
+var burger = document.querySelector('.burger');
+var nav = document.querySelector('#'+burger.dataset.target);
+burger.addEventListener('click', function(){
+    burger.classList.toggle('is-active');
+      nav.classList.toggle('is-active');
+    });

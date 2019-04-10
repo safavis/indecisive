@@ -134,6 +134,18 @@ body {
     height: 25px;
 }
 
-.nameinput, .emailinput {
-    width: 100%;
+#categoryCheck {
+    text-align: center;
+}
+
+@media only screen and (max-width: 1366px){
+    .mainLogo {
+        text-align:center;
+    }
+    .navbar-item{
+        color:black;
+    }
+}
+#resultSec{
+    margin-bottom:2px;
 }
