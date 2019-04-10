@@ -7,82 +7,84 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" href="./assets/image/favicon.png">
     <title>Login</title>
 </head>
-    <div id="container">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                    <a class="navbar-item"  href="#">
-                        
-                       
-                    </a>
-                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    </a>
-                </div>
-                <div id="navbarBasicExample" class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item">
-                            <img src="./assets/image/logo_ind.png" width="75px" height="500px" style="min-height: 100%" alt="Indecisive">
-                        </a>  
-                        <a class="navbar-item" href="./index.html">
-                            Home
-                        </a>         
-                        <a class="navbar-item">
-                            Contact Us
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="./index.html">
+                <img class="navlogo" src="./assets/image/logo_ind.png" alt="Indecisive">
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="./rate.html">
+                    Rate Us
+                </a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-light" href="./signup.html">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light" href="./login.html">
+                            Log in
+                        </a>
+                        <a class="button is-light" onClick="toggleNightMode()" id=togBut>
+                            <strong>Toggle Theme</strong>
                         </a>
                     </div>
-                    <div class="navbar-end">
-                            <div class="navbar-item">
-                                <div class="buttons">
-                                    <a class="button is-light">
-                                        <strong>Sign up</strong>
-                                    </a>
-                                    <a class="button is-light">
-                                        Log in
-                                    </a>
-                                    <a class="button is-light" onClick = "toggleNightMode()" id= togBut>
-                                            <strong>Toggle Theme</strong>
-                                        </a>
-                                        
-                                </div>
-                            </div>
-                        </div>
                 </div>
-            </nav>
-            <section class="section">
-                <div class="contents1">
-                    <div class="columns is-centered">
-                            <img src="./assets/image/logo_ind.png" alt="Indecisive">
-                       
-                        </div>
-                    </div>
-            </section>
-            <section class="section">
-                <div class="contents2">
-            <div class="field">
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered mainLogo">
+                <img src="./assets/image/logo_ind.png" alt="Indecisive">
+            </div>
+        </div>
+    </section>
+    
+    <div id="contactcontainer">
+        <div id="contactforms">
+            <div class="field contact-input">
                 <label class="label">Name</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="e.g Nicolas Cage">
+                    <input class="input nameinput" type="text" placeholder="Your name">
                 </div>
             </div>
-
-            <div class="field">
+            <div class="field contact-input">
                 <label class="label">Email</label>
-                <div class="control">
-                    <input class="input" type="email" placeholder="e.g. NicolasCage@gmail.com">
-
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input emailinput" pattern="[^ @]*@[^ @]*" type="email" placeholder="yourEmail@email.com"
+                        value="">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
                 </div>
-
             </div>
-            <a class="button is-info">Submit</a>
-
+            <div class="field is-grouped contact-input">
+                <div class="control">
+                    <button class="button is-link contactsbmt">Submit</button>
+                </div>
+            </div>
         </div>
-
-    </section>
+    </div>
 
     <footer id="footer">
         <div class="has-text-centered">
@@ -94,13 +96,10 @@
             </p>
         </div>
     </footer>
-    </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <!-- <script src="./assets/js/app.js"></script> -->
-
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-
     <script src="./assets/js/login.js"></script>
 </body>
 

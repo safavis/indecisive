@@ -28,11 +28,8 @@
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-          <a class="navbar-item" href="./index.html">
-            Home
-        </a>   
-        <a class="navbar-item" href="./contact.html">
-          Contact Us
+        <a class="navbar-item" href="./rate.html">
+          Rate Us
         </a>
       </div>
       <div class="navbar-end">
@@ -44,35 +41,55 @@
             <a class="button is-light" href="./login.html">
               Log in
             </a>
+            <a class="button is-light" onClick="toggleNightMode()" id=togBut>
+              <strong>Toggle Theme</strong>
+            </a>
           </div>
         </div>
       </div>
     </div>
   </nav>
 
+  <article class="messages message is-success">
+    <div class="message-header">
+      <p>Success</p>
+      <button class="messages delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body">
+      Thanks for signing up!
+    </div>
+  </article>
+
+  <article class="messages message is-danger">
+    <div class="message-header">
+      <p>Attention</p>
+      <button class="messages delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body">
+      Please fill out the form completely!
+    </div>
+  </article>
+
   <section class="section">
     <div class="container">
-      <div class="columns is-centered">
+      <div class="columns is-centered mainLogo">
         <img src="./assets/image/logo_ind.png" alt="Indecisive">
       </div>
     </div>
   </section>
+
   <section class="section">
     <div class="container">
       <div class="columns is-centered ">
         <div class="column is-half signin_column ">
-            <a class="button is-light signin_column" href="https://google.com">
-              <strong>Not a User? Sign Up!</strong>
-            </a>
-          
+          <a class="button is-light signin_column" href="https://google.com">
+            <strong>Not a User? Sign Up!</strong>
+          </a>
         </div>
-
         <div class="column is-half signin_column">
-          Already Signed up? Sign In!
+          Already Signed up? <a href="./login.html">Sign In!</a>
         </div>
-
       </div>
-
       <div class="columns">
         <div class="column is-half">
           <div class="field">
@@ -84,20 +101,17 @@
             <div class="control">
               <input class="input email" type="text" placeholder="Email">
             </div>
-
-            <label class="label">Username</label>
+            <label class="label">User name</label>
             <div class="control">
               <input class="input usernm" type="text" placeholder="User name">
             </div>
           </div>
-
           <div class="field">
             <label class="label">Password</label>
-            <div class="control has-icons-left has-icons-right">
+            <div class="control">
               <input class="input pass " type="password" placeholder="Password" value="">
             </div>
           </div>
-          
           <div class="field is-grouped">
             <div class="control">
               <button class="button is-link" id="signup">Submit</button>
@@ -122,7 +136,8 @@
   </footer>
 
   <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/signup.js"></script>
+  <script src="./assets/js/login.js"></script>
 </body>
 
 </html>

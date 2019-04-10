@@ -1,32 +1,34 @@
-let drinkWords =["SHOT O'CLOCK!", "It's 5 o'clock somwhere!", "Beer is proof that God loves us and wants us to be happy.",
-"DILLY DILLY!", "Alcohol may be man’s worst enemy, but the Bible says love your enemy.", "Everybody’s got to believe in something. I believe I’ll have another beer."]
-let beerImg = ['./assets/image/brew01.jpg', './assets/image/brew02.jpg', './assets/image/brew03.jpg', './assets/image/brew04.jpg', './assets/image/brew05.jpg', './assets/image/brew06.jpg', './assets/image/brew07.jpg', './assets/image/brew08.jpg', './assets/image/brew09.jpg', './assets/image/brew10.jpg' ]
-// On click fetchs and randomize returned data
-var config = {
-    apiKey: "AIzaSyALJmJ2VVKSDLb7wNk3HGxdXM1OH_KfE30",
-    authDomain: "indecisive-a9a51.firebaseapp.com",
-    databaseURL: "https://indecisive-a9a51.firebaseio.com",
-    projectId: "indecisive-a9a51",
-    storageBucket: "indecisive-a9a51.appspot.com",
-    messagingSenderId: "848170258525"
-  };
-  firebase.initializeApp(config);
-  let user=firebase.firestore()
-  let name
+const config = {
+  apiKey: "AIzaSyALJmJ2VVKSDLb7wNk3HGxdXM1OH_KfE30",
+  authDomain: "indecisive-a9a51.firebaseapp.com",
+  databaseURL: "https://indecisive-a9a51.firebaseio.com",
+  projectId: "indecisive-a9a51",
+  storageBucket: "indecisive-a9a51.appspot.com",
+  messagingSenderId: "848170258525"
+};
+firebase.initializeApp(config);
+let user = firebase.firestore()
+let name
+
 //   Beer Mapping API
-document.addEventListener('click', e =>{
-   // e.preventDefault()
-   let beerCheck = document.querySelector('#beerCheck').checked
-    if(beerCheck === true && e.target.className === 'button is-info search'){
-        let getBeerCity = document.querySelector('.input').value
-        fetch(`http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
-            .then( r => r.json())
-            .then( r =>{
-                let ranBrew = r[Math.floor(Math.random()* r.length)]
-                let ranWords = drinkWords[Math.floor(Math.random()*drinkWords.length)]
-                let ranImg = beerImg[Math.floor(Math.random()*beerImg.length)]
-                let beerListing = document.createElement('div')
-                beerListing.innerHTML = `
+let drinkWords = ["SHOT O'CLOCK!", "It's 5 o'clock somwhere!", "Beer is proof that God loves us and wants us to be happy.",
+  "DILLY DILLY!", "Alcohol may be man’s worst enemy, but the Bible says love your enemy.", "Everybody’s got to believe in something. I believe I’ll have another beer."]
+let beerImg = ['./assets/image/brew01.jpg', './assets/image/brew02.jpg', './assets/image/brew03.jpg', './assets/image/brew04.jpg', './assets/image/brew05.jpg', './assets/image/brew06.jpg', './assets/image/brew07.jpg', './assets/image/brew08.jpg', './assets/image/brew09.jpg', './assets/image/brew10.jpg']
+// On click fetches and randomize returned data
+
+document.addEventListener('click', e => {
+  // e.preventDefault()
+  let beerCheck = document.querySelector('#beerCheck').checked
+  if (beerCheck === true && e.target.className === 'button is-info search') {
+    let getBeerCity = document.querySelector('.input').value
+    fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
+      .then(r => r.json())
+      .then(r => {
+        let ranBrew = r[Math.floor(Math.random() * r.length)]
+        let ranWords = drinkWords[Math.floor(Math.random() * drinkWords.length)]
+        let ranImg = beerImg[Math.floor(Math.random() * beerImg.length)]
+        let beerListing = document.createElement('div')
+        beerListing.innerHTML = `
                 <h1 class="title is-1">Pub Choice!</h1>
                 <div class="card" id="beerCard">
                 <div class="card-image">
@@ -49,40 +51,32 @@ document.addEventListener('click', e =>{
               </div>
             </div>
                 `
-                document.querySelector('#beerResults').innerHTML = ``
-                document.querySelector('#beerResults').append(beerListing)
-                document.querySelector('#newBeer').style.display = 'block'
-                document.querySelector('#moreBeer').style.display = 'block'
-                console.log(ranWords)
-                console.log(ranBrew)
-            })
-            .catch(console.error)  
-    } else if(beerCheck === false){
         document.querySelector('#beerResults').innerHTML = ``
-        document.querySelector('#newBeer').style.display = 'none'
-        document.querySelector('#moreBeer').style.display = 'none'
-    }
-    if(e.target.id==="signup"){
-        name=document.querySelector(".name").value
-        let email=document.querySelector(".email").value
-        let username=document.querySelector(".usernm").value
-        let password=document.querySelector(".pass").value
-        console.log({'name':name,'email':email,'username':username,'password':password})
-        user.collection('user_login').doc(name).set({'name':name,'email':email,'username':username,'password':password})
-    }
+        document.querySelector('#beerResults').append(beerListing)
+        document.querySelector('#newBeer').style.display = 'block'
+        document.querySelector('#moreBeer').style.display = 'block'
+        console.log(ranWords)
+        console.log(ranBrew)
+      })
+      .catch(console.error)
+  } else if (beerCheck === false) {
+    document.querySelector('#beerResults').innerHTML = ``
+    document.querySelector('#newBeer').style.display = 'none'
+    document.querySelector('#moreBeer').style.display = 'none'
+  }
 })
 
-document.querySelector('#moreBeer').addEventListener('click', e =>{
-    document.querySelector(`#beerResults`).innerHTML = ``
-         let getBeerCity = document.querySelector('.input').value
-         fetch(`http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
-            .then(r => r.json())
-            .then(r => {
-                console.log(r)
-                console.log(getBeerCity)
-                for(let i = 0; i <10;i++){ 
-                    let beerListing = document.createElement('div')
-                    beerListing.innerHTML = `
+document.querySelector('#moreBeer').addEventListener('click', e => {
+  document.querySelector(`#beerResults`).innerHTML = ``
+  let getBeerCity = document.querySelector('.input').value
+  fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
+    .then(r => r.json())
+    .then(r => {
+      console.log(r)
+      console.log(getBeerCity)
+      for (let i = 0; i < 10; i++) {
+        let beerListing = document.createElement('div')
+        beerListing.innerHTML = `
                     <div class="card" id="beerCard">
                     <div class="card-image">
                       <figure class="image is-4by3">
@@ -103,12 +97,13 @@ document.querySelector('#moreBeer').addEventListener('click', e =>{
                     <div class="content"><Strong>""</strong></div>
                   </div>
                 </div>`
-                document.querySelector('#beerResults').append(beerListing)
-                document.querySelector('#newBeer').style.display = 'block'
-                document.querySelector('#moreBeer').style.display = 'block'
-            }
-            })
-        })
+        document.querySelector('#beerResults').append(beerListing)
+        document.querySelector('#newBeer').style.display = 'block'
+        document.querySelector('#moreBeer').style.display = 'block'
+      }
+    })
+})
+
 // Yelp API code
 let URL
 
@@ -419,8 +414,8 @@ document.querySelector(`.more`).addEventListener('click', e => {
 
 // navbar burger
 var burger = document.querySelector('.burger');
-var nav = document.querySelector('#'+burger.dataset.target);
-burger.addEventListener('click', function(){
-    burger.classList.toggle('is-active');
-      nav.classList.toggle('is-active');
-    });
+var nav = document.querySelector('#' + burger.dataset.target);
+burger.addEventListener('click', function () {
+  burger.classList.toggle('is-active');
+  nav.classList.toggle('is-active');
+});

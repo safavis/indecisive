@@ -1,5 +1,10 @@
+html {
+    background: #F4FEFF;
+}
+
 body {
     height: 100%;
+    background: #F4FEFF;
 }
 
 .headerText {
@@ -15,7 +20,7 @@ body {
 }
 
 .navlogo {
-    width: 75px; 
+    width: 75px;
     height: 500px;
     min-height: 100%;
 }
@@ -32,10 +37,6 @@ body {
 .contact-input {
     width: 50%;
     margin: auto;
-}
-
-#contactforms {
-    margin-top: 100px;
 }
 
 .is-success, .is-danger {
@@ -59,13 +60,14 @@ body {
 .card {
     width: 40%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .title {
     text-align: center;
 }
 
-.input {
+.usersearch {
     width: 500px;
 }
 
@@ -73,7 +75,7 @@ body {
     .card, .messages, .contact-input, .search2 {
         width: 90%;
     }
-    .input {
+    .usersearch {
         width: 100%;
         margin: auto;
         margin-left: 10px;
@@ -91,8 +93,8 @@ body {
     text-align: center;
 }
 
-#beerResults{
-    margin:auto;
+#beerResults {
+    margin: auto;
     text-align: center;
 }
 
@@ -103,15 +105,35 @@ body {
     margin-bottom: 20px;
     width: 40%
 }
-#moreBeer, #newBeer{
-    display:none;
+
+#newBeer {
+    display: none;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
     width: 40%
 }
-.footer{
-    background-color: #FF9543; 
+
+#moreBeer {
+    display: none;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 40%
+}
+
+@media only screen and (max-width: 600px) {
+    #moreBeer {
+        display: none;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        width: 40%
+    }
+}
+
+.footer {
+    background-color: #FF9543;
     padding: 24px;
     position: fixed;
     left: 0px;
@@ -138,14 +160,29 @@ body {
     text-align: center;
 }
 
-@media only screen and (max-width: 1366px){
+@media only screen and (max-width: 1366px) {
     .mainLogo {
-        text-align:center;
+        text-align: center;
     }
-    .navbar-item{
-        color:black;
+    .navbar-item {
+        color: white
     }
 }
-#resultSec{
-    margin-bottom:2px;
+
+#resultSec {
+    margin-bottom: 2px;
+}
+
+.checkbox-container {
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.signup-container {
+    width: 50%;
+}
+
+#ratinginput {
+    margin-top: 10px;
 }
