@@ -75,6 +75,11 @@
 }
 .footer{
     background-color: #FF9543; 
+    padding: 24px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
   }
 
 .hours {
