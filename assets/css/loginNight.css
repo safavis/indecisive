@@ -15,7 +15,9 @@ body{
 .navbar {
     background-color: #0A0024;
 }
-
+.label {
+    color:white
+}
 
 .navbar-item {
     color:white;
@@ -40,4 +42,5 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white
 }

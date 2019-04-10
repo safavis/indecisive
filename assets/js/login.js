@@ -1,6 +1,6 @@
 
 // Initialize Firebase
-var config = {
+const config = {
   apiKey: "AIzaSyALJmJ2VVKSDLb7wNk3HGxdXM1OH_KfE30",
   authDomain: "indecisive-a9a51.firebaseapp.com",
   databaseURL: "https://indecisive-a9a51.firebaseio.com",
@@ -17,7 +17,7 @@ let nightmodeOn = false
 let currentmode;
 const toggleNightMode = function () {
   nightmodeOn ? currentmode = nightmode : currentmode = normal
-  var newstyle = document.createElement("link"); 
+  let newstyle = document.createElement("link"); 
   newstyle.setAttribute("rel", "stylesheet");
   newstyle.setAttribute("type", "text/css");
   newstyle.setAttribute("href", currentmode); 
