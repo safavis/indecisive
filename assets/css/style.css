@@ -88,6 +88,15 @@ body {
     }
 }
 
+@media only screen and (max-width: 584px) {
+    .btns {
+        margin-bottom: 1000px;
+    }
+    .footer {
+        margin-top: 1000px;
+    }
+}
+
 #new-result, #multiple {
     margin: auto;
     text-align: center;
@@ -139,6 +148,13 @@ body {
     left: 0px;
     bottom: 0px;
     width: 100%;
+    margin-top: 1000px;
+}
+
+.btns {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 50px;
 }
 
 .hours {
