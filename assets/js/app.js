@@ -19,7 +19,7 @@ document.addEventListener('click', e =>{
    let beerCheck = document.querySelector('#beerCheck').checked
     if(beerCheck === true && e.target.className === 'button is-info search'){
         let getBeerCity = document.querySelector('.input').value
-        fetch(`http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
+        fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
             .then( r => r.json())
             .then( r =>{
                 let ranBrew = r[Math.floor(Math.random()* r.length)]
@@ -75,7 +75,7 @@ document.addEventListener('click', e =>{
 document.querySelector('#moreBeer').addEventListener('click', e =>{
     document.querySelector(`#beerResults`).innerHTML = ``
          let getBeerCity = document.querySelector('.input').value
-         fetch(`http://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
+         fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
             .then(r => r.json())
             .then(r => {
                 console.log(r)
