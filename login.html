@@ -6,40 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/login.css">
     <link rel="icon" href="./assets/image/favicon.png">
     <title>Login</title>
 </head>
-
-<<<<<<< HEAD
-<body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="./index.html">
-                <img class="navlogo" src="./assets/image/logo_ind.png" alt="Indecisive">
-            </a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item" href="./contact.html">
-                    Contact Us
-                </a>
-            </div>
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-light" href="./signup.html">
-                            <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light" href="./login.html">
-                            Log in
-=======
+    <div id="container">
         <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item"  href="#">
@@ -56,12 +27,30 @@
                     <div class="navbar-start">
                         <a class="navbar-item">
                             <img src="./assets/image/logo_ind.png" width="75px" height="500px" style="min-height: 100%" alt="Indecisive">
+                        </a>  
+                        <a class="navbar-item" href="./index.html">
+                            Home
                         </a>         
                         <a class="navbar-item">
                             Contact Us
->>>>>>> 4a759b09cbe2566c4416a28ad1541aeb1d5f74e0
                         </a>
                     </div>
+                    <div class="navbar-end">
+                            <div class="navbar-item">
+                                <div class="buttons">
+                                    <a class="button is-light">
+                                        <strong>Sign up</strong>
+                                    </a>
+                                    <a class="button is-light">
+                                        Log in
+                                    </a>
+                                    <a class="button is-light" onClick = "toggleNightMode()" id= togBut>
+                                            <strong>Toggle Theme</strong>
+                                        </a>
+                                        
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </nav>
             <section class="section">
@@ -95,7 +84,7 @@
 
     </section>
 
-    <footer class="footer">
+    <footer id="footer">
         <div class="has-text-centered">
             <p>
                 <strong>INDECISIVE</strong> created by <a href="https://github.com/safavis">Mahya Safavi</a>, <a
@@ -105,10 +94,14 @@
             </p>
         </div>
     </footer>
+    </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-    <script src="./assets/js/app.js"></script>
+    <!-- <script src="./assets/js/app.js"></script> -->
+
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <script src="./assets/js/login.js"></script>
 </body>
 
 </html>
