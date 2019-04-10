@@ -3,16 +3,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/login.css">
+
     <title>Login</title>
 </head>
 <body>
-    <style>
-        body{
-            background-color: #F4FEFF;
-        }
-        </style>
+    <div id="Container">
+
         <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item"  href="#">
@@ -43,13 +42,17 @@
                                 <a class="button is-light" href="login.html">
                                     Log in
                                 </a>
+                                <a class="button is-light" onClick = "toggleNightMode()" id= togBut>
+                                        <strong>Toggle Theme</strong>
+                                    </a>
+                                    
                             </div>
                         </div>
                     </div>
                 </div>
             </nav>
             <section class="section">
-                <div class="container">
+                <div class="contents1">
                     <div class="columns is-centered">
                             <img src="./assets/image/logo_ind.png" alt="Indecisive">
                        
@@ -57,7 +60,7 @@
                     </div>
             </section>
             <section class="section">
-                <div class="container">
+                <div class="contents2">
             <div class="field">
                     <label class="label">Username</label>
                     <div class="control">
@@ -78,11 +81,7 @@
                 </div>
                 
                 </section>
-                
-                <br>
-                <br>
-                <br>
-                <footer class="footer">
+                <footer id="footer">
                     <div class="content has-text-centered">
                       <p>
                         <strong>INDECISIVE</strong> created by <a href="https://github.com/safavis">Maya Safavi</a>, <a href="https://github.com/CDKedits">Connor Nguyen</a>, <a href="https://github.com/diennguyen90">Dien Nguyen</a>, <a href="https://github.com/dantecomandante">Dante Perez</a>. The source code is licensed by <a href="https://github.com/safavis/indecisive">Foreign Coders™</a> Powered By Coffee.
@@ -90,7 +89,7 @@
                       </p>
                     </div>
                   </footer>
-
+    </div>          
             
     
     
@@ -99,6 +98,8 @@
     
                 <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
     <script src="./assets/js/login.js"></script>
+    <!-- <script src="./assets/js/app.js"></script> -->
         <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script src="./assets/js/login.js"></script>
 </body>
 </html>
