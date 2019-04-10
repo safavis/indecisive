@@ -2,10 +2,10 @@
     box-sizing: border-box;
 }
 body{
-    background: #F4FEFF;
+    background:#001926;
 }
 #Container {
-    background-color: #F4FEFF;
+    background-color: #001926;
     text-align: center;
 
 }
@@ -13,7 +13,7 @@ body{
     text-align: center;
 }
 .navbar {
-    background-color: #FF9543;
+    background-color: #0A0024;
 }
 
 
@@ -25,13 +25,13 @@ body{
 .contents2 {
     max-width: 45%;
     margin: auto;
-    background-color: #F4FEFF;
+    background-color:#001926;
     text-align: center;
    
 }
 
 #footer{
-  background-color: #FF9543; 
+  background-color: #001926; 
   position: absolute;
   bottom: 0;
   left: 0;
