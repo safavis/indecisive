@@ -227,8 +227,8 @@ document.querySelector(`.search`).addEventListener('click', e => {
                       </div>
                     </div>
                   </div>
-                  <div class="content columns">
-                    <div class="location column is-half">
+                  <div class="content">
+                    <div class="location">
                       <h5>Address:</h5>
                       <p class="address"></p>
                       <h5>Phone number:</h5>
@@ -261,13 +261,12 @@ document.querySelector(`.search2`).addEventListener('click', e => {
   searchInput = document.querySelector(`.input`).value
   URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=25`;
   queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
-
   fetch(queryURL, yelpObject)
     .then(r => r.json())
     .then(r => {
       let i = Math.floor(Math.random() * 25)
       let currentBusinessId = r.businesses[i].id
-      // New fetch with current business
+      // New fetch with selected business
       URL = `https://api.yelp.com/v3/businesses/${currentBusinessId}`
       queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
       fetch(queryURL, yelpObject)
@@ -329,6 +328,7 @@ document.querySelector(`.search2`).addEventListener('click', e => {
             <p>${weekdays[i]}: ${openingHours} - ${closingHours}</p>
             `
               document.querySelector(`.hours`).append(hoursElem)
+
             })
           } else {
             newListing.innerHTML = `
@@ -347,8 +347,8 @@ document.querySelector(`.search2`).addEventListener('click', e => {
                       </div>
                     </div>
                   </div>
-                  <div class="content columns">
-                    <div class="location column is-half">
+                  <div class="content">
+                    <div class="location">
                       <h5>Address:</h5>
                       <p class="address"></p>
                       <h5>Phone number:</h5>

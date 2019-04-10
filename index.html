@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Indecisive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
     <link rel="icon" href="./assets/image/favicon.png">
@@ -14,25 +15,25 @@
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item"  href="#">
-                <img src="./assets/image/logo_ind.png" width="75px" height="500px" style="min-height: 100%" alt="Indecisive">
-               
+            <a class="navbar-item" href="./index.html">
+                <img class="navlogo" src="./assets/image/logo_ind.png" alt="Indecisive">
             </a>
-            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="index.html">
+                <a class="navbar-item" href="./index.html">
                     Home
                 </a>         
-                <a class="navbar-item" href="contact.html">
+                <a class="navbar-item" href="./contact.html">
                     Contact Us
                 </a>
-            </div>      
+            </div>
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
@@ -54,6 +55,7 @@
                
                 </div>
             </div>
+        </div>
     </section>
 
     <section class="section">
@@ -89,7 +91,8 @@
             </div>
         </div>
     </section>
-
+<section class="section" id="resultSec">
+    <div class="container">
     <div id="results"></div>
 
     <div id="new-result">
@@ -97,7 +100,7 @@
             <a class="button is-info search2">
                 Next option
             </a>
-        </p> 
+        </p>
     </div>
     <div id="multiple">
         <p class="control">
@@ -124,16 +127,21 @@
     <br>
     <br>
     <br>
+    </div>
+</section>
     <footer class="footer">
         <div class="has-text-centered">
-          <p>
-            <strong>INDECISIVE</strong> created by <a href="https://github.com/safavis">Mahya Safavi</a>, <a href="https://github.com/CDKedits">Connor Nguyen</a>, <a href="https://github.com/diennguyen90">Dien Nguyen</a>, <a href="https://github.com/dantecomandante">Dante Perez</a>. The source code is licensed by <a href="https://github.com/safavis/indecisive">Foreign Coders™</a> Powered By Coffee.
-          </p>
+            <p>
+                <strong>INDECISIVE</strong> created by <a href="https://github.com/safavis">Mahya Safavi</a>, <a
+                    href="https://github.com/CDKedits">Connor Nguyen</a>, <a href="https://github.com/diennguyen90">Dien
+                    Nguyen</a>, <a href="https://github.com/dantecomandante">Dante Perez</a>. The source code is
+                licensed by <a href="https://github.com/safavis/indecisive">Foreign Coders™</a> Powered By Coffee.
+            </p>
         </div>
-      </footer>
+    </footer>
 
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <script src="./assets/js/app.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
