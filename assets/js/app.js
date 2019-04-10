@@ -42,11 +42,11 @@ document.addEventListener('click', e =>{
                 </div>
               <div class="content">
                 <p>Address: ${ranBrew.street}. ${ranBrew.city}, ${ranBrew.state} ${ranBrew.zip}</p>
+                <p><a href="https://www.google.com/maps/search/?api=1&query=${ranBrew.name}">Google Map</a></p>
                 <p>Phone: ${ranBrew.phone}</p>
                 <p>For business hours, reviews, and menus, <a href="${ranBrew.reviewlink}">click here</a>
                 </div>
                 <div class="content"><Strong>"${ranWords}"</strong></div>
-              </div>
             </div>
                 `
                 document.querySelector('#beerResults').innerHTML = ``
@@ -97,10 +97,11 @@ document.querySelector('#moreBeer').addEventListener('click', e =>{
                     </div>
                   <div class="content">
                     <p>Address: ${r[i].street}. ${r[i].city}, ${r[i].state} ${r[i].zip}</p>
+                    <p> <a href="https://www.google.com/maps/search/?api=1&query=${r[i].name}">Google Map it!</a></p>
                     <p>Phone: ${r[i].phone}</p>
                     <p>For business hours, reviews, and menus, <a href="${r[i].reviewlink}">click here</a>
                     </div>
-                    <div class="content"><Strong>""</strong></div>
+                    <div class="content"><Strong>"${drinkWords[i]}"</strong></div>
                   </div>
                 </div>`
                 document.querySelector('#beerResults').append(beerListing)
