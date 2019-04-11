@@ -27,20 +27,29 @@
       </a>
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
+<<<<<<< HEAD
       <div class="navbar-start">
           
         <a class="navbar-item" href="./contact.html">
           Contact Us
         </a>
       </div>
+=======
+>>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
+            <a class="button is-light" href="./rate.html">
+              <strong>Rate Us</strong>
+            </a>
             <a class="button is-light" href="./signup.html">
               <strong>Sign up</strong>
             </a>
             <a class="button is-light" href="./login.html">
-              Log in
+              <strong>Log in</strong>
+            </a>
+            <a class="button is-light" onClick="toggleNightMode()" id=togBut>
+              <strong>Toggle Theme</strong>
             </a>
           </div>
         </div>
@@ -50,14 +59,36 @@
 
   <section class="section">
     <div class="container">
-      <div class="columns is-centered">
+      <div class="columns is-centered mainLogo">
         <img src="./assets/image/logo_ind.png" alt="Indecisive">
       </div>
     </div>
   </section>
-  <section class="section">
+
+  <article class="messages message is-success">
+    <div class="message-header">
+      <p>Success</p>
+      <button class="messages delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body">
+      Thanks for signing up!
+    </div>
+  </article>
+
+  <article class="messages message is-danger">
+    <div class="message-header">
+      <p>Attention</p>
+      <button class="messages delete" aria-label="delete"></button>
+    </div>
+    <div class="message-body">
+      Please fill out the form completely!
+    </div>
+  </article>
+
+  <section id="signupsection" class="section">
     <div class="container">
       <div class="columns is-centered ">
+<<<<<<< HEAD
         <div class="column is-half signin_column ">
             
               Not a User? Sign Up!
@@ -68,10 +99,17 @@
             <a class="button is-light signin_column" href="./login.html">
           Already Signed up? Sign In!
         </a>
+=======
+        <div id="signupDiv" class="column is-half signin_column ">
+          <a class="button is-light signin_column" href="https://google.com">
+            <strong>Not a User? Sign Up!</strong>
+          </a>
         </div>
-
+        <div id="signinDiv" class="column is-half signin_column">
+          Already Signed up? <a href="./login.html">Sign In!</a>
+>>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
+        </div>
       </div>
-
       <div class="columns">
         <div class="column is-half">
           <div class="field">
@@ -83,20 +121,17 @@
             <div class="control">
               <input class="input email" type="text" placeholder="Email">
             </div>
-
-            <label class="label">Username</label>
+            <label class="label">User name</label>
             <div class="control">
               <input class="input usernm" type="text" placeholder="User name">
             </div>
           </div>
-
           <div class="field">
             <label class="label">Password</label>
-            <div class="control has-icons-left has-icons-right">
+            <div class="control">
               <input class="input pass " type="password" placeholder="Password" value="">
             </div>
           </div>
-          
           <div class="field is-grouped">
             <div class="control">
               <button class="button is-link" id="signup">Submit</button>
@@ -111,7 +146,7 @@
 
   <footer class="footer">
     <div class="has-text-centered">
-      <p>
+      <p class="footertext">
         <strong>INDECISIVE</strong> created by <a href="https://github.com/safavis">Mahya Safavi</a>, <a
           href="https://github.com/CDKedits">Connor Nguyen</a>, <a href="https://github.com/diennguyen90">Dien
           Nguyen</a>, <a href="https://github.com/dantecomandante">Dante Perez</a>. The source code is
@@ -121,7 +156,8 @@
   </footer>
 
   <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/signup.js"></script>
+  <script src="./assets/js/nav.js"></script>
 </body>
 
 </html>

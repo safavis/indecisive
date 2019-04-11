@@ -1,8 +1,13 @@
-body {
-    height: 100%;
+html {
+    background: #F4FEFF;
 }
 
-.headerText {
+body {
+    height: 100%;
+    background: #F4FEFF;
+}
+
+.headerText, .centered-card-content {
     text-align: center;
 }
 
@@ -10,23 +15,26 @@ body {
     background-color: #FF9543;
 }
 
-.navbar-item {
-    color: white;
-}
-
 .navlogo {
-    width: 75px; 
+    width: 75px;
     height: 500px;
     min-height: 100%;
 }
 
 .signin_column {
     text-align: center;
-    margin-left: 10px;
     background-color: #77EEFF;
     color: midnightblue;
     font-family: 'Fjalla One', sans-serif;
     color: white;
+}
+
+#signupDiv {
+    margin-right: 5px;
+}
+
+#signinDiv {
+    margin-left: 5px;
 }
 
 .contact-input {
@@ -34,15 +42,10 @@ body {
     margin: auto;
 }
 
-#contactforms {
-    margin-top: 100px;
-}
-
 .is-success, .is-danger {
     display: none;
     width: 40%;
     margin: auto;
-    margin-top: 100px;
     text-align: center;
 }
 
@@ -59,31 +62,15 @@ body {
 .card {
     width: 40%;
     margin: auto;
+    margin-top: 20px;
 }
 
 .title {
     text-align: center;
 }
 
-.input {
+.usersearch {
     width: 500px;
-}
-
-@media only screen and (max-width: 768px) {
-    .card, .messages, .contact-input, .search2 {
-        width: 90%;
-    }
-    .input {
-        width: 100%;
-        margin: auto;
-        margin-left: 10px;
-    }
-    .search {
-        margin: 0px 10px;
-    }
-    .mainlogo {
-        margin: auto;
-    }
 }
 
 #new-result, #multiple {
@@ -91,8 +78,8 @@ body {
     text-align: center;
 }
 
-#beerResults{
-    margin:auto;
+#beerResults {
+    margin: auto;
     text-align: center;
 }
 
@@ -103,15 +90,25 @@ body {
     margin-bottom: 20px;
     width: 40%
 }
-#moreBeer, #newBeer{
-    display:none;
+
+#newBeer {
+    display: none;
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
     width: 40%
 }
-.footer{
-    background-color: #FF9543; 
+
+#moreBeer {
+    display: none;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 40%
+}
+
+.footer {
+    background-color: #FF9543;
     padding: 24px;
     position: fixed;
     left: 0px;
@@ -119,8 +116,10 @@ body {
     width: 100%;
 }
 
-.hours {
-    margin-bottom: 20px;
+.btns {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 50px;
 }
 
 .ratingsDiv {
@@ -138,18 +137,92 @@ body {
     text-align: center;
 }
 
-@media only screen and (max-width: 1366px){
-    .mainLogo {
-        text-align:center;
+#resultSec {
+    padding-top: 0;
+    margin-bottom: 100px;
+}
+
+#signupsection {
+    margin-bottom: 150px;
+}
+
+.ratingscontainer {
+    margin-bottom: 200px;
+}
+
+.checkbox-container {
+    margin: auto;
+    text-align: center;
+    margin-top: 25px;
+}
+
+.signup-container {
+    width: 50%;
+}
+
+#ratinginput {
+    margin-top: 10px;
+}
+
+.ratearticle {
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    width: 50%;
+    background-color: #FF9543;
+}
+
+@media only screen and (max-width: 600px) {
+    #moreBeer {
+        display: none;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        width: 40%
     }
-    .navbar-item{
-        color:black;
+    .btns {
+        margin-bottom: 1000px;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .card, .messages, .contact-input, .search2, .more, #newBeer, #moreBeer {
+        width: 90%;
+    }
+    .usersearch {
+        width: 100%;
+        margin: auto;
+        margin-left: 10px;
+    }
+    .search {
+        margin: 0px 10px;
+    }
+    .mainlogo {
+        margin: auto;
+    }
+    .ratearticle {
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+        background-color: #FF9543;
+        width: 90%;
+    }
+    #signupDiv, #signinDiv {
+        margin: 0;
+    }
+}
+<<<<<<< HEAD
 #resultSec{
     margin-bottom:2px;
 }
 
 .add{
     color:green;
+=======
+
+@media only screen and (max-width: 1366px) {
+    .mainLogo {
+        text-align: center;
+    }
+>>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
 }

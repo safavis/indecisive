@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" href="./assets/image/favicon.png">
     <title>Login</title>
 </head>
+<<<<<<< HEAD
     <div id="container">
         <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
@@ -70,18 +72,99 @@
                 <div class="control">
                     <input class="input" type="password" placeholder="e.g. Password">
 
-                </div>
+=======
 
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="./index.html">
+                <img class="navlogo" src="./assets/image/logo_ind.png" alt="Indecisive">
+            </a>
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-light" href="./rate.html">
+                            <strong>Rate Us</strong>
+                        </a>
+                        <a class="button is-light" href="./signup.html">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-light" href="./login.html">
+                            <strong>Log in</strong>
+                        </a>
+                        <a class="button is-light" onClick="toggleNightMode()" id=togBut>
+                            <strong>Toggle Theme</strong>
+                        </a>
+                    </div>
+                </div>
             </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered mainLogo">
+                <img src="./assets/image/logo_ind.png" alt="Indecisive">
+            </div>
+        </div>
+    </section>
+    
+    <article class="messages message is-danger">
+        <div class="message-header">
+            <p>Attention</p>
+            <button class="messages delete" aria-label="delete"></button>
+        </div>
+        <div class="message-body">
+            Please fill out the form completely!
+        </div>
+    </article>
+
+    <div id="contactcontainer">
+        <div id="contactforms">
+            <div class="field contact-input">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input nameinput" type="text" placeholder="Your name">
+                </div>
+            </div>
+            <div class="field contact-input">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input emailinput" pattern="[^ @]*@[^ @]*" type="email" placeholder="yourEmail@email.com"
+                        value="">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field is-grouped contact-input">
+                <div class="control">
+                    <button class="button is-link loginsbmt sbmt" >Submit</button>
+>>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
+                </div>
+            </div>
+<<<<<<< HEAD
             <a class="button is-info sbmt">Submit</a>
 
+=======
+>>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
         </div>
+    </div>
 
-    </section>
-
-    <footer id="footer">
+    <footer class="footer">
         <div class="has-text-centered">
-            <p>
+            <p class="footertext">
                 <strong>INDECISIVE</strong> created by <a href="https://github.com/safavis">Mahya Safavi</a>, <a
                     href="https://github.com/CDKedits">Connor Nguyen</a>, <a href="https://github.com/diennguyen90">Dien
                     Nguyen</a>, <a href="https://github.com/dantecomandante">Dante Perez</a>. The source code is
@@ -89,14 +172,11 @@
             </p>
         </div>
     </footer>
-    </div>
 
     <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-    <!-- <script src="./assets/js/app.js"></script> -->
-
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-
     <script src="./assets/js/login.js"></script>
+    <script src="./assets/js/nav.js"></script>
 </body>
 
 </html>
