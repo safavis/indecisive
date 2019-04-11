@@ -27,11 +27,18 @@ body {
 
 .signin_column {
     text-align: center;
-    margin-left: 10px;
     background-color: #77EEFF;
     color: midnightblue;
     font-family: 'Fjalla One', sans-serif;
     color: white;
+}
+
+#signupDiv {
+    margin-right: 5px;
+}
+
+#signinDiv {
+    margin-left: 5px;
 }
 
 .contact-input {
@@ -71,32 +78,6 @@ body {
     width: 500px;
 }
 
-@media only screen and (max-width: 768px) {
-    .card, .messages, .contact-input, .search2 {
-        width: 90%;
-    }
-    .usersearch {
-        width: 100%;
-        margin: auto;
-        margin-left: 10px;
-    }
-    .search {
-        margin: 0px 10px;
-    }
-    .mainlogo {
-        margin: auto;
-    }
-}
-
-@media only screen and (max-width: 584px) {
-    .btns {
-        margin-bottom: 1000px;
-    }
-    .footer {
-        margin-top: 1000px;
-    }
-}
-
 #new-result, #multiple {
     margin: auto;
     text-align: center;
@@ -131,16 +112,6 @@ body {
     width: 40%
 }
 
-@media only screen and (max-width: 600px) {
-    #moreBeer {
-        display: none;
-        margin: auto;
-        margin-top: 20px;
-        margin-bottom: 100px;
-        width: 40%
-    }
-}
-
 .footer {
     background-color: #FF9543;
     padding: 24px;
@@ -148,7 +119,6 @@ body {
     left: 0px;
     bottom: 0px;
     width: 100%;
-    margin-top: 1000px;
 }
 
 .btns {
@@ -176,17 +146,9 @@ body {
     text-align: center;
 }
 
-@media only screen and (max-width: 1366px) {
-    .mainLogo {
-        text-align: center;
-    }
-    .navbar-item {
-        color: white
-    }
-}
-
 #resultSec {
-    margin-bottom: 2px;
+    margin-bottom: 100px;
+    padding-top: 0;
 }
 
 .checkbox-container {
@@ -201,4 +163,68 @@ body {
 
 #ratinginput {
     margin-top: 10px;
+}
+
+.ratearticle {
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    width: 50%;
+    background-color: #FF9543;
+}
+
+.footertext, strong, .ratemessagetext {
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    #moreBeer {
+        display: none;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        width: 40%
+    }
+    .btns {
+        margin-bottom: 1000px;
+    }
+    .footer {
+        margin-top: 1000px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card, .messages, .contact-input, .search2, .more, #newBeer, #moreBeer {
+        width: 90%;
+    }
+    .usersearch {
+        width: 100%;
+        margin: auto;
+        margin-left: 10px;
+    }
+    .search {
+        margin: 0px 10px;
+    }
+    .mainlogo {
+        margin: auto;
+    }
+    .ratearticle {
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+        background-color: #FF9543;
+        width: 90%;
+    }
+    #signupDiv, #signinDiv {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .mainLogo {
+        text-align: center;
+    }
+    .navbar-item {
+        color: white
+    }
 }

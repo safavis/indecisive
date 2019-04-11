@@ -14,20 +14,18 @@ let drinkWords = ["SHOT O'CLOCK!", "It's 5 o'clock somwhere!", "Beer is proof th
 let beerImg = ['./assets/image/brew01.jpg', './assets/image/brew02.jpg', './assets/image/brew03.jpg', './assets/image/brew04.jpg', './assets/image/brew05.jpg', './assets/image/brew06.jpg', './assets/image/brew07.jpg', './assets/image/brew08.jpg', './assets/image/brew09.jpg', './assets/image/brew10.jpg']
 // On click fetches and randomize returned data
 
-document.addEventListener('click', e => {
-  // e.preventDefault()
-  let beerCheck = document.querySelector('#beerCheck').checked
-  if (beerCheck === true && e.target.className === 'button is-info search') {
-    let getBeerCity = document.querySelector('.input').value
-    fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
-      .then(r => r.json())
-      .then(r => {
-        let ranBrew = r[Math.floor(Math.random() * r.length)]
-        let ranWords = drinkWords[Math.floor(Math.random() * drinkWords.length)]
-        let ranImg = beerImg[Math.floor(Math.random() * beerImg.length)]
-        let beerListing = document.createElement('div')
-        beerListing.innerHTML = `
-                <h1 class="title is-1">Pub Choice!</h1>
+const fetchBeerAPI = () => {
+  let getBeerCity = document.querySelector('.input').value
+  fetch(`https://beermapping.com/webservice/loccity/01bbd604591366d98ebd8377bb5ad2f4/${getBeerCity}&s=json`)
+    .then(r => r.json())
+    .then(r => {
+      document.querySelector('#beerResults').innerHTML = ``
+      let ranBrew = r[Math.floor(Math.random() * r.length)]
+      let ranWords = drinkWords[Math.floor(Math.random() * drinkWords.length)]
+      let ranImg = beerImg[Math.floor(Math.random() * beerImg.length)]
+      let beerListing = document.createElement('div')
+      beerListing.innerHTML = `
+                <h1 class="title is-4">Pub Choice!</h1>
                 <div class="card" id="beerCard">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -41,26 +39,78 @@ document.addEventListener('click', e => {
                   </div>
                 </div>
               <div class="content">
-                <p>Address: ${ranBrew.street}. ${ranBrew.city}, ${ranBrew.state} ${ranBrew.zip}</p>
-                <p>Phone: ${ranBrew.phone}</p>
-                <p>For business hours, reviews, and menus, <a href="${ranBrew.reviewlink}">click here</a>
+                <h5>Address: </h5>
+                <p>${ranBrew.street}. ${ranBrew.city}, ${ranBrew.state} ${ranBrew.zip}</p>
+                <h5>Phone: </h5>
+                <p>${ranBrew.phone}</p>
+                <h5>For business hours, reviews, and menus, <a href="${ranBrew.reviewlink}">click here</a></h5>
                 </div>
                 <div class="content"><Strong>"${ranWords}"</strong></div>
               </div>
             </div>
                 `
-        document.querySelector('#beerResults').innerHTML = ``
-        document.querySelector('#beerResults').append(beerListing)
-        document.querySelector('#newBeer').style.display = 'block'
-        document.querySelector('#moreBeer').style.display = 'block'
-        console.log(ranWords)
-        console.log(ranBrew)
+      document.querySelector('#beerResults').append(beerListing)
+      document.querySelector('#newBeer').style.display = 'block'
+      document.querySelector('#moreBeer').style.display = 'block'
+      console.log(ranWords)
+      console.log(ranBrew)
+    })
+    .catch(console.error)
+}
+
+document.addEventListener('click', e => {
+  let beerCheck = document.querySelector('#beerCheck').checked
+  if (beerCheck === true && e.target.className === 'button is-info search') {
+    let getBeerCity = document.querySelector('.input').value
+    fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
+      .then(r => r.json())
+      .then(r => {
+        console.log(r)
+        let ranBrew = r[Math.floor(Math.random() * r.length)]
+        let ranWords = drinkWords[Math.floor(Math.random() * drinkWords.length)]
+        let ranImg = beerImg[Math.floor(Math.random() * beerImg.length)]
+        if (ranBrew.name === null) {
+          console.log(`is null`)
+          fetchBeerAPI()
+        } else if (beerCheck === false) {
+          document.querySelector('#beerResults').innerHTML = ``
+          document.querySelector('#newBeer').style.display = 'none'
+          document.querySelector('#moreBeer').style.display = 'none'
+        } else {
+          let beerListing = document.createElement('div')
+          beerListing.innerHTML = `
+                <h1 class="title is-4">Pub Choice!</h1>
+                <div class="card" id="beerCard">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img class="business-img" src="${ranImg}" alt="${ranBrew.name}">
+                  </figure>
+                </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4">${ranBrew.name}</p>
+                  </div>
+                </div>
+              <div class="content">
+                <h5>Address: </h5>
+                <p>${ranBrew.street}. ${ranBrew.city}, ${ranBrew.state} ${ranBrew.zip}</p>
+                <h5>Phone: </h5>
+                <p>${ranBrew.phone}</p>
+                <h5>For business hours, reviews, and menus, <a href="${ranBrew.reviewlink}">click here</a></h5>
+                </div>
+                <div class="content"><Strong>"${ranWords}"</strong></div>
+              </div>
+            </div>
+                `
+          document.querySelector('#beerResults').innerHTML = ``
+          document.querySelector('#beerResults').append(beerListing)
+          document.querySelector('#newBeer').style.display = 'block'
+          document.querySelector('#moreBeer').style.display = 'block'
+          console.log(ranWords)
+          console.log(ranBrew)
+        }
       })
-      .catch(console.error)
-  } else if (beerCheck === false) {
-    document.querySelector('#beerResults').innerHTML = ``
-    document.querySelector('#newBeer').style.display = 'none'
-    document.querySelector('#moreBeer').style.display = 'none'
   }
 })
 
@@ -88,9 +138,11 @@ document.querySelector('#moreBeer').addEventListener('click', e =>{
                       </div>
                     </div>
                   <div class="content">
-                    <p>Address: ${r[i].street}. ${r[i].city}, ${r[i].state} ${r[i].zip}</p>
-                    <p>Phone: ${r[i].phone}</p>
-                    <p>For business hours, reviews, and menus, <a href="${r[i].reviewlink}">click here</a>
+                    <h5>Address: </h5>
+                    <p>${r[i].street}. ${r[i].city}, ${r[i].state} ${r[i].zip}</p>
+                    <h5>Phone: </h5>
+                    <p>${r[i].phone}</p>
+                    <h5>For business hours, reviews, and menus, <a href="${r[i].reviewlink}">click here</a></h5>
                     </div>
                     <div class="content"><Strong>""</strong></div>
                   </div>
@@ -131,24 +183,26 @@ const ratingFunc = () => {
 
 // Search bar button
 document.querySelector(`.search`).addEventListener('click', e => {
-  searchInput = document.querySelector(`.input`).value
-  URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=25`;
-  queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
-  fetch(queryURL, yelpObject)
-    .then(r => r.json())
-    .then(r => {
-      let i = Math.floor(Math.random() * 25)
-      let currentBusinessId = r.businesses[i].id
-      // New fetch with selected business
-      URL = `https://api.yelp.com/v3/businesses/${currentBusinessId}`
-      queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
-      fetch(queryURL, yelpObject)
-        .then(r => r.json())
-        .then(r => {
-          console.log(r)
-          let newListing = document.createElement(`div`)
-          if (r.hours[0].open.length === 7) {
-            newListing.innerHTML = `
+  let foodCheck = document.querySelector('#foodCheck').checked
+  if (foodCheck === true && e.target.className === 'button is-info search') {
+    searchInput = document.querySelector(`.input`).value
+    URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=25`;
+    queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
+    fetch(queryURL, yelpObject)
+      .then(r => r.json())
+      .then(r => {
+        let i = Math.floor(Math.random() * 25)
+        let currentBusinessId = r.businesses[i].id
+        // New fetch with selected business
+        URL = `https://api.yelp.com/v3/businesses/${currentBusinessId}`
+        queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
+        fetch(queryURL, yelpObject)
+          .then(r => r.json())
+          .then(r => {
+            let newListing = document.createElement(`div`)
+            if (r.hours[0].open.length === 7) {
+              newListing.innerHTML = `
+              <h1 class="title is-4">Food Choice!</h1>
               <div class="card">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -181,30 +235,30 @@ document.querySelector(`.search`).addEventListener('click', e => {
                 </div>
               </div>
               `
-            document.querySelector(`#results`).innerHTML = ``
-            document.querySelector(`#results`).append(newListing)
-            for (let i = 0; i < r.location.display_address.length; i++) {
-              let addressPart = document.createElement(`p`)
-              addressPart.innerHTML = `${r.location.display_address[i]} `
-              document.querySelector(`.address`).append(addressPart)
-            }
-            for (let i = 0; i < r.rating; i++) {
-              ratingFunc()
-            }
-            let businessHours = r.hours[0].open
-            console.log(r)
-            businessHours.forEach((item, i) => {
-              let openingHours = moment(item.start, `HHmm`).format(`hh:mm a`)
-              let closingHours = moment(item.end, `HHmm`).format(`hh:mm a`)
-              let hoursElem = document.createElement(`p`)
-              hoursElem.innerHTML = `
+              document.querySelector(`#results`).innerHTML = ``
+              document.querySelector(`#results`).append(newListing)
+              for (let i = 0; i < r.location.display_address.length; i++) {
+                let addressPart = document.createElement(`p`)
+                addressPart.innerHTML = `${r.location.display_address[i]} `
+                document.querySelector(`.address`).append(addressPart)
+              }
+              for (let i = 0; i < r.rating; i++) {
+                ratingFunc()
+              }
+              let businessHours = r.hours[0].open
+              businessHours.forEach((item, i) => {
+                let openingHours = moment(item.start, `HHmm`).format(`hh:mm a`)
+                let closingHours = moment(item.end, `HHmm`).format(`hh:mm a`)
+                let hoursElem = document.createElement(`p`)
+                hoursElem.innerHTML = `
             <p>${weekdays[i]}: ${openingHours} - ${closingHours}</p>
             `
-              document.querySelector(`.hours`).append(hoursElem)
+                document.querySelector(`.hours`).append(hoursElem)
 
-            })
-          } else {
-            newListing.innerHTML = `
+              })
+            } else {
+              newListing.innerHTML = `
+              <h1 class="title is-4">Food Choice!</h1>
               <div class="card">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -232,21 +286,22 @@ document.querySelector(`.search`).addEventListener('click', e => {
                 </div>
               </div>
               `
-            document.querySelector(`#results`).innerHTML = ``
-            document.querySelector(`#results`).append(newListing)
-            for (let i = 0; i < r.location.display_address.length; i++) {
-              let addressPart = document.createElement(`p`)
-              addressPart.innerHTML = `${r.location.display_address[i]} `
-              document.querySelector(`.address`).append(addressPart)
+              document.querySelector(`#results`).innerHTML = ``
+              document.querySelector(`#results`).append(newListing)
+              for (let i = 0; i < r.location.display_address.length; i++) {
+                let addressPart = document.createElement(`p`)
+                addressPart.innerHTML = `${r.location.display_address[i]} `
+                document.querySelector(`.address`).append(addressPart)
+              }
+              for (let i = 0; i < r.rating; i++) {
+                ratingFunc()
+              }
             }
-            for (let i = 0; i < r.rating; i++) {
-              ratingFunc()
-            }
-          }
-        })
-    })
-  document.querySelector(`.search2`).style.display = `block`
-  document.querySelector(`.more`).style.display = `block`
+          })
+      })
+    document.querySelector(`.search2`).style.display = `block`
+    document.querySelector(`.more`).style.display = `block`
+  }
 });
 
 // Next option button
@@ -265,10 +320,10 @@ document.querySelector(`.search2`).addEventListener('click', e => {
       fetch(queryURL, yelpObject)
         .then(r => r.json())
         .then(r => {
-          console.log(r)
           let newListing = document.createElement(`div`)
           if (r.hours[0].open.length === 7) {
             newListing.innerHTML = `
+              <h1 class="title is-4">Food Choice!</h1>
               <div class="card">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -312,7 +367,6 @@ document.querySelector(`.search2`).addEventListener('click', e => {
               ratingFunc()
             }
             let businessHours = r.hours[0].open
-            console.log(r)
             businessHours.forEach((item, i) => {
               let openingHours = moment(item.start, `HHmm`).format(`hh:mm a`)
               let closingHours = moment(item.end, `HHmm`).format(`hh:mm a`)
@@ -325,6 +379,7 @@ document.querySelector(`.search2`).addEventListener('click', e => {
             })
           } else {
             newListing.innerHTML = `
+              <h1 class="title is-4">Food Choice!</h1>
               <div class="card">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -371,13 +426,11 @@ document.querySelector(`.search2`).addEventListener('click', e => {
 document.querySelector(`.more`).addEventListener('click', e => {
   document.querySelector(`#results`).innerHTML = ``
   searchInput = document.querySelector(`.input`).value
-  console.log(searchInput)
   URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=10`;
   queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
   fetch(queryURL, yelpObject)
     .then(r => r.json())
     .then(r => {
-      console.log(r)
       for (let i = 0; i < r.businesses.length; i++) {
         let newListing = document.createElement(`div`)
         newListing.innerHTML = `
