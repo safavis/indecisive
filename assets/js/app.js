@@ -106,6 +106,7 @@ document.querySelector('#moreBeer').addEventListener('click', e => {
     .then(r => r.json())
     .then(r => {
       for (let i = 0; i < 10; i++) {
+        let ranWords = drinkWords[Math.floor(Math.random() * drinkWords.length)]
         let beerListing = document.createElement('div')
         beerListing.innerHTML = `
                     <div class="card" id="beerCard">
@@ -127,7 +128,7 @@ document.querySelector('#moreBeer').addEventListener('click', e => {
                     <p>${r[i].phone}</p>
                     <h5>For business hours, reviews, and menus, <a href="${r[i].reviewlink}">click here</a></h5>
                     </div>
-                    <div class="content"><Strong>""</strong></div>
+                    <div class="content"><Strong>"${ranWords}"</strong></div>
                   </div>
                 </div>`
         document.querySelector('#beerResults').append(beerListing)
@@ -414,7 +415,7 @@ document.querySelector(`.search2`).addEventListener('click', e => {
 document.querySelector(`.more`).addEventListener('click', e => {
   document.querySelector(`#results`).innerHTML = ``
   searchInput = document.querySelector(`.input`).value
-  URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=10`;
+  URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=6`;
   queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
   fetch(queryURL, yelpObject)
     .then(r => r.json())
@@ -450,4 +451,3 @@ document.querySelector(`.more`).addEventListener('click', e => {
     })
     .catch(console.error)
 });
-
