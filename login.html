@@ -54,7 +54,7 @@
             </div>
         </div>
     </section>
-    
+
     <article class="messages message is-danger">
         <div class="message-header">
             <p>Attention</p>
@@ -68,16 +68,10 @@
     <div id="contactcontainer">
         <div id="contactforms">
             <div class="field contact-input">
-                <label class="label">Name</label>
-                <div class="control">
-                    <input class="input nameinput" type="text" placeholder="Your name">
-                </div>
-            </div>
-            <div class="field contact-input">
                 <label class="label">Email</label>
                 <div class="control has-icons-left has-icons-right">
-                    <input class="input emailinput" pattern="[^ @]*@[^ @]*" type="email" placeholder="yourEmail@email.com"
-                        value="">
+                    <input class="input emailinput" pattern="[^ @]*@[^ @]*" type="email"
+                        placeholder="yourEmail@email.com" value="">
                     <span class="icon is-small is-left">
                         <i class="fas fa-envelope"></i>
                     </span>
@@ -85,30 +79,36 @@
                         <i class="fas fa-exclamation-triangle"></i>
                     </span>
                 </div>
-            </div>
-            <div class="field is-grouped contact-input">
-                <div class="control">
-                    <button class="button is-link loginsbmt sbmt" >Submit</button>
+                <div class="field">
+                    <label id="pwtext" class="label">Password</label>
+                    <div class="control">
+                        <input class="input pass " type="password" placeholder="Password" value="">
+                    </div>
+                </div>
+                <div class="field is-grouped contact-input">
+                    <div class="control">
+                        <button class="button is-link loginsbmt sbmt">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <footer class="footer">
-        <div class="has-text-centered">
-            <p class="footertext">
-                <strong>INDECISIVE</strong> created by <a href="https://github.com/safavis">Mahya Safavi</a>, <a
-                    href="https://github.com/CDKedits">Connor Nguyen</a>, <a href="https://github.com/diennguyen90">Dien
-                    Nguyen</a>, <a href="https://github.com/dantecomandante">Dante Perez</a>. The source code is
-                licensed by <a href="https://github.com/safavis/indecisive">Foreign Coders™</a> Powered By Coffee.
-            </p>
-        </div>
-    </footer>
+        <footer class="footer">
+            <div class="has-text-centered">
+                <p class="footertext">
+                    <strong>INDECISIVE</strong> created by <a href="https://github.com/safavis">Mahya Safavi</a>, <a
+                        href="https://github.com/CDKedits">Connor Nguyen</a>, <a
+                        href="https://github.com/diennguyen90">Dien
+                        Nguyen</a>, <a href="https://github.com/dantecomandante">Dante Perez</a>. The source code is
+                    licensed by <a href="https://github.com/safavis/indecisive">Foreign Coders™</a> Powered By Coffee.
+                </p>
+            </div>
+        </footer>
 
-    <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="./assets/js/login.js"></script>
-    <script src="./assets/js/nav.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script src="./assets/js/login.js"></script>
+        <script src="./assets/js/nav.js"></script>
 </body>
 
 </html>

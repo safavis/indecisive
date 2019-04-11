@@ -16,7 +16,7 @@ const toggleNightMode = function () {
 
 // Pseudo login code
 document.querySelector(`.sbmt`).addEventListener('click', e => {
-  let name = document.querySelector(`.nameinput`).value
+  let name = document.querySelector(`.pass`).value
   let email = document.querySelector(`.emailinput`).value
   if (name === `` || email === ``) {
     document.querySelector(`.is-danger`).style.display = `block`

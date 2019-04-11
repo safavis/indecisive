@@ -116,6 +116,10 @@ body {
     width: 100%;
 }
 
+#pwtext {
+    margin-top: 10px;
+}
+
 .btns {
     margin-top: 0px;
     padding-top: 0px;
