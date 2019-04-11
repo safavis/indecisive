@@ -424,3 +424,14 @@ burger.addEventListener('click', function(){
     burger.classList.toggle('is-active');
       nav.classList.toggle('is-active');
     });
+
+    // Initialize Firebase
+let db=firebase.firestore()
+let people_on
+
+db.collection("user_login").onSnapshot(({docs})=>{
+  people_on=docs.filter(element=>{
+      return element.data().loggedin==true
+  })
+  
+})
