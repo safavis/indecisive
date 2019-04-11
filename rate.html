@@ -13,7 +13,6 @@
 </head>
 
 <body>
-
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="./index.html">
@@ -28,9 +27,14 @@
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
+<<<<<<< HEAD:contact.html
             
         <a class="navbar-item" href="contact.html">
           Contact Us
+=======
+        <a class="navbar-item" href="./rate.html">
+          Rate Us
+>>>>>>> 28ba370744822ce260fc35d9232f16e6b742fc26:rate.html
         </a>
       </div>
       <div class="navbar-end">
@@ -41,6 +45,9 @@
             </a>
             <a class="button is-light" href="./login.html">
               Log in
+            </a>
+            <a class="button is-light" onClick="toggleNightMode()" id=togBut>
+              <strong>Toggle Theme</strong>
             </a>
           </div>
         </div>
@@ -68,29 +75,27 @@
     </div>
   </article>
 
-  <div id="contactcontainer">
-
-    <section class="section">
-      <div class="container">
-        <div class="columns is-centered">
-          <img src="./assets/image/logo_ind.png" alt="Indecisive">
-        </div>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered mainLogo">
+        <img src="./assets/image/logo_ind.png" alt="Indecisive">
       </div>
-    </section>
+    </div>
+  </section>
 
+  <div id="contactcontainer">
     <div id="contactforms">
       <div class="field contact-input">
         <label class="label">Name</label>
         <div class="control">
-          <input class="input nameinput" type="text" placeholder="Your name">
+          <input class="input name" type="text" placeholder="Your name">
         </div>
       </div>
 
       <div class="field contact-input">
         <label class="label">Email</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input emailinput" pattern="[^ @]*@[^ @]*" type="email" placeholder="yourEmail@email.com"
-            value="">
+          <input class="input email" type="email" placeholder="yourEmail@email.com" value="">
           <span class="icon is-small is-left">
             <i class="fas fa-envelope"></i>
           </span>
@@ -98,16 +103,19 @@
             <i class="fas fa-exclamation-triangle"></i>
           </span>
         </div>
-      </div>
 
-      <div class="field contact-input">
-        <label class="label">Subject</label>
-        <div class="control">
-          <div class="select">
-            <select class="option">
-              <option value="questions">Questions</option>
-              <option value="problems">Report a bug</option>
-            </select>
+        <div class="field" id="ratinginput">
+          <label class="label">Rating out of 5 stars</label>
+          <div class="control">
+            <div class="select">
+              <select class="option">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
@@ -121,9 +129,15 @@
 
       <div class="field is-grouped contact-input">
         <div class="control">
-          <button class="button is-link contactsbmt">Submit</button>
+          <button class="button is-link ratesbmt">Submit</button>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="ratingscontainer">
+    <h2>See what others have to say about Indecisive!</h2>
+    <div class="appendratings">
     </div>
   </div>
 
@@ -139,7 +153,8 @@
   </footer>
 
   <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
-  <script src="./assets/js/contact.js"></script>
+  <script src="./assets/js/rate.js"></script>
+  <script src="./assets/js/login.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </body>
 
