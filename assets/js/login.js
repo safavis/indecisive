@@ -20,6 +20,8 @@ db.collection("user_login").onSnapshot(({docs})=>{
       return element.data().loggedin==true
   })
   console.log(people_on)
+  console.log(`loggedin4${loggedin}`)
+
   me=people_on.filter(element=>{
     console.log(`my name is${element.data().name}`)
     return element.id==localStorage.getItem('name')
@@ -60,7 +62,7 @@ document.querySelector(".contents2").addEventListener('click',({target})=>{
                     el.loggedin=true
                     db.collection('user_login').doc(id).set(el)
                     localStorage.setItem('name',id)
-                    window.location.href="https://google.com"
+                    // window.location.href="./index.html"
                   }
                 else
                 {
