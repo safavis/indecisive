@@ -7,8 +7,6 @@ const config = {
   messagingSenderId: "848170258525"
 };
 firebase.initializeApp(config);
-let user = firebase.firestore()
-let name
 
 //   Beer Mapping API
 let drinkWords = ["SHOT O'CLOCK!", "It's 5 o'clock somwhere!", "Beer is proof that God loves us and wants us to be happy.",
@@ -423,10 +421,27 @@ burger.addEventListener('click', function(){
     // Initialize Firebase
 let db=firebase.firestore()
 let people_on
+let me
 
 db.collection("user_login").onSnapshot(({docs})=>{
   people_on=docs.filter(element=>{
       return element.data().loggedin==true
   })
-  
+  me=people_on.filter(element=>{
+    console.log(`my name is${element.data().name}`)
+    return element.id==localStorage.getItem('name')
+  })
+  console.log(me.length)
+  if(me.length==1)
+  {
+      document.querySelector(".loginoff_button").textContent="Log Out"
+      // document.querySelector(".loginoff_button").setAttribute('href',"./index.html")
+      console.log('we are loggonh out')
+  }
+  else{
+    // document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
+    console.log('we are loggonh in')
+
+  }
+  console.log(document.querySelector(".loginoff_button"))
 })
