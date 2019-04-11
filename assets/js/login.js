@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
 // Initialize Firebase
 const config = {
   apiKey: "AIzaSyALJmJ2VVKSDLb7wNk3HGxdXM1OH_KfE30",
@@ -121,11 +117,7 @@ document.querySelector(".contents2").addEventListener('click',({target})=>{
   
 })
 
-<<<<<<< HEAD
-=======
->>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
-=======
->>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
+
 //togglenightmode
 const normal = "./assets/css/login.css"
 const nightmode = "./assets/css/loginNight.css"

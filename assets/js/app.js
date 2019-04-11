@@ -1,33 +1,4 @@
-const config = {
-  apiKey: "AIzaSyALJmJ2VVKSDLb7wNk3HGxdXM1OH_KfE30",
-  authDomain: "indecisive-a9a51.firebaseapp.com",
-  databaseURL: "https://indecisive-a9a51.firebaseio.com",
-  projectId: "indecisive-a9a51",
-  storageBucket: "indecisive-a9a51.appspot.com",
-  messagingSenderId: "848170258525"
-};
-firebase.initializeApp(config);
-
 //   Beer Mapping API
-<<<<<<< HEAD
-<<<<<<< HEAD
-document.addEventListener('click', e =>{
-   // e.preventDefault()
-   let beerCheck = document.querySelector('#beerCheck').checked
-    if(beerCheck === true && e.target.className === 'button is-info search'){
-        let getBeerCity = document.querySelector('.input').value
-        fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
-            .then( r => r.json())
-            .then( r =>{
-                let ranBrew = r[Math.floor(Math.random()* r.length)]
-                let ranWords = drinkWords[Math.floor(Math.random()*drinkWords.length)]
-                let ranImg = beerImg[Math.floor(Math.random()*beerImg.length)]
-                let beerListing = document.createElement('div')
-                beerListing.innerHTML = `
-                <h1 class="title is-1">Pub Choice!</h1>
-=======
-=======
->>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
 let drinkWords = ["SHOT O'CLOCK!", "It's 5 o'clock somwhere!", "Beer is proof that God loves us and wants us to be happy.",
   "DILLY DILLY!", "Alcohol may be man’s worst enemy, but the Bible says love your enemy.", "Everybody’s got to believe in something. I believe I’ll have another beer."]
 let beerImg = ['./assets/image/brew01.jpg', './assets/image/brew02.jpg', './assets/image/brew03.jpg', './assets/image/brew04.jpg', './assets/image/brew05.jpg', './assets/image/brew06.jpg', './assets/image/brew07.jpg', './assets/image/brew08.jpg', './assets/image/brew09.jpg', './assets/image/brew10.jpg']
@@ -45,10 +16,6 @@ const fetchBeerAPI = () => {
       let beerListing = document.createElement('div')
       beerListing.innerHTML = `
                 <h1 class="title is-4">Pub Choice!</h1>
-<<<<<<< HEAD
->>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
-=======
->>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
                 <div class="card" id="beerCard">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -62,20 +29,14 @@ const fetchBeerAPI = () => {
                   </div>
                 </div>
               <div class="content">
-<<<<<<< HEAD
-                <p>Address: ${ranBrew.street}. ${ranBrew.city}, ${ranBrew.state} ${ranBrew.zip}</p>
-                <p><a href="https://www.google.com/maps/search/?api=1&query=${ranBrew.name}">Google Map</a></p>
-                <p>Phone: ${ranBrew.phone}</p>
-                <p>For business hours, reviews, and menus, <a href="${ranBrew.reviewlink}">click here</a>
-=======
                 <h5>Address: </h5>
                 <p>${ranBrew.street}. ${ranBrew.city}, ${ranBrew.state} ${ranBrew.zip}</p>
                 <h5>Phone: </h5>
                 <p>${ranBrew.phone}</p>
                 <h5>For business hours, reviews, and menus, <a href="${ranBrew.reviewlink}">click here</a></h5>
->>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
                 </div>
                 <div class="content"><Strong>"${ranWords}"</strong></div>
+              </div>
             </div>
                 `
       document.querySelector('#beerResults').append(beerListing)
@@ -138,22 +99,6 @@ document.addEventListener('click', e => {
   }
 })
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-document.querySelector('#moreBeer').addEventListener('click', e =>{
-    document.querySelector(`#beerResults`).innerHTML = ``
-         let getBeerCity = document.querySelector('.input').value
-         fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
-            .then(r => r.json())
-            .then(r => {
-                console.log(r)
-                console.log(getBeerCity)
-                for(let i = 0; i <10;i++){ 
-                    let beerListing = document.createElement('div')
-                    beerListing.innerHTML = `
-=======
-=======
->>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
 document.querySelector('#moreBeer').addEventListener('click', e => {
   document.querySelector(`#beerResults`).innerHTML = ``
   let getBeerCity = document.querySelector('.input').value
@@ -164,10 +109,6 @@ document.querySelector('#moreBeer').addEventListener('click', e => {
         let ranWords = drinkWords[Math.floor(Math.random() * drinkWords.length)]
         let beerListing = document.createElement('div')
         beerListing.innerHTML = `
-<<<<<<< HEAD
->>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
-=======
->>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
                     <div class="card" id="beerCard">
                     <div class="card-image">
                       <figure class="image is-4by3">
@@ -181,14 +122,6 @@ document.querySelector('#moreBeer').addEventListener('click', e => {
                       </div>
                     </div>
                   <div class="content">
-<<<<<<< HEAD
-                    <p>Address: ${r[i].street}. ${r[i].city}, ${r[i].state} ${r[i].zip}</p>
-                    <p> <a href="https://www.google.com/maps/search/?api=1&query=${r[i].name}">Google Map it!</a></p>
-                    <p>Phone: ${r[i].phone}</p>
-                    <p>For business hours, reviews, and menus, <a href="${r[i].reviewlink}">click here</a>
-                    </div>
-                    <div class="content"><Strong>"${drinkWords[i]}"</strong></div>
-=======
                     <h5>Address: </h5>
                     <p>${r[i].street}. ${r[i].city}, ${r[i].state} ${r[i].zip}</p>
                     <h5>Phone: </h5>
@@ -196,7 +129,6 @@ document.querySelector('#moreBeer').addEventListener('click', e => {
                     <h5>For business hours, reviews, and menus, <a href="${r[i].reviewlink}">click here</a></h5>
                     </div>
                     <div class="content"><Strong>"${ranWords}"</strong></div>
->>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
                   </div>
                 </div>`
         document.querySelector('#beerResults').append(beerListing)
@@ -517,41 +449,5 @@ document.querySelector(`.more`).addEventListener('click', e => {
         document.querySelector(`#results`).append(newListing)
       }
     })
-});
-
-
-// navbar burger
-var burger = document.querySelector('.burger');
-var nav = document.querySelector('#'+burger.dataset.target);
-burger.addEventListener('click', function(){
-    burger.classList.toggle('is-active');
-      nav.classList.toggle('is-active');
-    });
-
-    // Initialize Firebase
-let db=firebase.firestore()
-let people_on
-let me
-
-db.collection("user_login").onSnapshot(({docs})=>{
-  people_on=docs.filter(element=>{
-      return element.data().loggedin==true
-  })
-  me=people_on.filter(element=>{
-    console.log(`my name is${element.data().name}`)
-    return element.id==localStorage.getItem('name')
-  })
-  console.log(me.length)
-  if(me.length==1)
-  {
-      document.querySelector(".loginoff_button").textContent="Log Out"
-      // document.querySelector(".loginoff_button").setAttribute('href',"./index.html")
-      console.log('we are loggonh out')
-  }
-  else{
-    // document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
-    console.log('we are loggonh in')
-
-  }
-  console.log(document.querySelector(".loginoff_button"))
+    .catch(console.error)
 })

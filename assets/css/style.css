@@ -211,18 +211,9 @@ body {
         margin: 0;
     }
 }
-<<<<<<< HEAD
-#resultSec{
-    margin-bottom:2px;
-}
-
-.add{
-    color:green;
-=======
 
 @media only screen and (max-width: 1366px) {
     .mainLogo {
         text-align: center;
     }
->>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
 }
