@@ -27,6 +27,8 @@ db.collection("user_login").onSnapshot(({docs})=>{
     console.log(`my name is${element.data().name}`)
     return element.id==localStorage.getItem('name')
   })
+  console.log(`loggedind${loggedin}`)
+
   if(me.length==1 & !loggedin)
         {
           console.log("we want to sign out")
@@ -41,7 +43,7 @@ db.collection("user_login").onSnapshot(({docs})=>{
         }
 })
 
-document.querySelector(".contents2").addEventListener('click',({target})=>{
+document.querySelector("#contactforms").addEventListener('click',({target})=>{
   console.log(target.classList[2])
   if(target.classList[2]=="sbmt")
   {
@@ -74,7 +76,7 @@ document.querySelector(".contents2").addEventListener('click',({target})=>{
         });
         console.log(`log:${loggedin}`)
         console.log(`pass:${pass_incorr}`)
-        document.querySelector(".contents2").innerHTML=`
+        document.querySelector("#contactforms").innerHTML=`
         <div class="field">
         <label class="label">Username</label>
         <div class="control">
@@ -96,7 +98,7 @@ document.querySelector(".contents2").addEventListener('click',({target})=>{
               {let message_div=document.createElement('p')
               message_div.style.color="red"
               message_div.textContent="Username does not exist , please sign up!"
-              document.querySelector(".contents2").append(message_div)
+              document.querySelector("#contactforms").append(message_div)
               loggedin=false
               pass_incorr=false
         
