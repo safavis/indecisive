@@ -1,4 +1,15 @@
+const config = {
+  apiKey: "AIzaSyALJmJ2VVKSDLb7wNk3HGxdXM1OH_KfE30",
+  authDomain: "indecisive-a9a51.firebaseapp.com",
+  databaseURL: "https://indecisive-a9a51.firebaseio.com",
+  projectId: "indecisive-a9a51",
+  storageBucket: "indecisive-a9a51.appspot.com",
+  messagingSenderId: "848170258525"
+};
+firebase.initializeApp(config);
+
 //   Beer Mapping API
+<<<<<<< HEAD
 <<<<<<< HEAD
 document.addEventListener('click', e =>{
    // e.preventDefault()
@@ -15,6 +26,8 @@ document.addEventListener('click', e =>{
                 beerListing.innerHTML = `
                 <h1 class="title is-1">Pub Choice!</h1>
 =======
+=======
+>>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
 let drinkWords = ["SHOT O'CLOCK!", "It's 5 o'clock somwhere!", "Beer is proof that God loves us and wants us to be happy.",
   "DILLY DILLY!", "Alcohol may be man’s worst enemy, but the Bible says love your enemy.", "Everybody’s got to believe in something. I believe I’ll have another beer."]
 let beerImg = ['./assets/image/brew01.jpg', './assets/image/brew02.jpg', './assets/image/brew03.jpg', './assets/image/brew04.jpg', './assets/image/brew05.jpg', './assets/image/brew06.jpg', './assets/image/brew07.jpg', './assets/image/brew08.jpg', './assets/image/brew09.jpg', './assets/image/brew10.jpg']
@@ -32,7 +45,10 @@ const fetchBeerAPI = () => {
       let beerListing = document.createElement('div')
       beerListing.innerHTML = `
                 <h1 class="title is-4">Pub Choice!</h1>
+<<<<<<< HEAD
 >>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
+=======
+>>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
                 <div class="card" id="beerCard">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -123,6 +139,7 @@ document.addEventListener('click', e => {
 })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 document.querySelector('#moreBeer').addEventListener('click', e =>{
     document.querySelector(`#beerResults`).innerHTML = ``
          let getBeerCity = document.querySelector('.input').value
@@ -135,6 +152,8 @@ document.querySelector('#moreBeer').addEventListener('click', e =>{
                     let beerListing = document.createElement('div')
                     beerListing.innerHTML = `
 =======
+=======
+>>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
 document.querySelector('#moreBeer').addEventListener('click', e => {
   document.querySelector(`#beerResults`).innerHTML = ``
   let getBeerCity = document.querySelector('.input').value
@@ -145,7 +164,10 @@ document.querySelector('#moreBeer').addEventListener('click', e => {
         let ranWords = drinkWords[Math.floor(Math.random() * drinkWords.length)]
         let beerListing = document.createElement('div')
         beerListing.innerHTML = `
+<<<<<<< HEAD
 >>>>>>> eb4f52cfdf6f9da429e985f71bc46dd2be2c8ef1
+=======
+>>>>>>> 17dfa39bc05023449fd8d41eb42a614845c38d23
                     <div class="card" id="beerCard">
                     <div class="card-image">
                       <figure class="image is-4by3">
@@ -495,5 +517,41 @@ document.querySelector(`.more`).addEventListener('click', e => {
         document.querySelector(`#results`).append(newListing)
       }
     })
-    .catch(console.error)
 });
+
+
+// navbar burger
+var burger = document.querySelector('.burger');
+var nav = document.querySelector('#'+burger.dataset.target);
+burger.addEventListener('click', function(){
+    burger.classList.toggle('is-active');
+      nav.classList.toggle('is-active');
+    });
+
+    // Initialize Firebase
+let db=firebase.firestore()
+let people_on
+let me
+
+db.collection("user_login").onSnapshot(({docs})=>{
+  people_on=docs.filter(element=>{
+      return element.data().loggedin==true
+  })
+  me=people_on.filter(element=>{
+    console.log(`my name is${element.data().name}`)
+    return element.id==localStorage.getItem('name')
+  })
+  console.log(me.length)
+  if(me.length==1)
+  {
+      document.querySelector(".loginoff_button").textContent="Log Out"
+      // document.querySelector(".loginoff_button").setAttribute('href',"./index.html")
+      console.log('we are loggonh out')
+  }
+  else{
+    // document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
+    console.log('we are loggonh in')
+
+  }
+  console.log(document.querySelector(".loginoff_button"))
+})

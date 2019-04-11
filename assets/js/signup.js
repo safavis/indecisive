@@ -19,6 +19,7 @@ document.querySelector(`#signup`).addEventListener(`click`, e => {
   e.preventDefault()
   let id = db.collection(`user_login`).doc().id
   let name = document.querySelector(`.name`).value
+  let loggedin=true
   let email = document.querySelector(`.email`).value
   let username = document.querySelector(`.usernm`).value
   let password = document.querySelector(`.pass`).value
@@ -28,9 +29,11 @@ document.querySelector(`#signup`).addEventListener(`click`, e => {
     db.collection('user_login').doc(id).set({
       name: name,
       email: email,
+      loggedin:loggedin,
       username: username,
       password: password,
     })
+    localStorage.setItem('name',id)
     document.querySelector(`.name`).value = ``
     document.querySelector(`.email`).value = ``
     document.querySelector(`.usernm`).value = ``
