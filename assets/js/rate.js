@@ -65,9 +65,11 @@ db.collection(`ratings`).onSnapshot(({ docs }) => {
       </header>
       <div class="card-content">
         <div class="content ratingsDiv">
-          <p>${rating}</p>
+        <strong class="centered-card-content">Rating out of 5:</strong>  
+        <p>${rating}</p>
         </div>
         <div class="content">
+          <strong class="centered-card-content">What they have to say:</strong>  
           <p>${message}</p>
         </div>
       </div>

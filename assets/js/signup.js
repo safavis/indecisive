@@ -39,6 +39,7 @@ document.querySelector(`#signup`).addEventListener(`click`, e => {
     document.querySelector(`.usernm`).value = ``
     document.querySelector(`.pass`).value = ``
     document.querySelector(`.is-success`).style.display = `block`
+    document.querySelector(`.is-danger`).style.display = `none`
   }
 })
 

@@ -20,7 +20,7 @@ db.collection("user_login").onSnapshot(({docs})=>{
       return element.data().loggedin==true
   })
   console.log(people_on)
-  console.log(`loggedin4${loggedin}`)
+  console.log(`loggedind${loggedin}`)
 
   me=people_on.filter(element=>{
     console.log(`my name is${element.data().name}`)

@@ -52,8 +52,6 @@ const fetchBeerAPI = () => {
       document.querySelector('#beerResults').append(beerListing)
       document.querySelector('#newBeer').style.display = 'block'
       document.querySelector('#moreBeer').style.display = 'block'
-      console.log(ranWords)
-      console.log(ranBrew)
     })
     .catch(console.error)
 }
@@ -65,12 +63,10 @@ document.addEventListener('click', e => {
     fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
       .then(r => r.json())
       .then(r => {
-        console.log(r)
         let ranBrew = r[Math.floor(Math.random() * r.length)]
         let ranWords = drinkWords[Math.floor(Math.random() * drinkWords.length)]
         let ranImg = beerImg[Math.floor(Math.random() * beerImg.length)]
         if (ranBrew.name === null) {
-          console.log(`is null`)
           fetchBeerAPI()
         } else if (beerCheck === false) {
           document.querySelector('#beerResults').innerHTML = ``
@@ -107,24 +103,22 @@ document.addEventListener('click', e => {
           document.querySelector('#beerResults').append(beerListing)
           document.querySelector('#newBeer').style.display = 'block'
           document.querySelector('#moreBeer').style.display = 'block'
-          console.log(ranWords)
-          console.log(ranBrew)
         }
       })
+      .catch(console.error)
   }
 })
 
-document.querySelector('#moreBeer').addEventListener('click', e =>{
-    document.querySelector(`#beerResults`).innerHTML = ``
-         let getBeerCity = document.querySelector('.input').value
-         fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
-            .then(r => r.json())
-            .then(r => {
-                console.log(r)
-                console.log(getBeerCity)
-                for(let i = 0; i <10;i++){ 
-                    let beerListing = document.createElement('div')
-                    beerListing.innerHTML = `
+document.querySelector('#moreBeer').addEventListener('click', e => {
+  document.querySelector(`#beerResults`).innerHTML = ``
+  let getBeerCity = document.querySelector('.input').value
+  fetch(`https://beermapping.com/webservice/loccity/b7e0022555c2b92e984c3bc704449aba/${getBeerCity}&s=json`)
+    .then(r => r.json())
+    .then(r => {
+      for (let i = 0; i < 10; i++) {
+        let ranWords = drinkWords[Math.floor(Math.random() * drinkWords.length)]
+        let beerListing = document.createElement('div')
+        beerListing.innerHTML = `
                     <div class="card" id="beerCard">
                     <div class="card-image">
                       <figure class="image is-4by3">
@@ -144,7 +138,7 @@ document.querySelector('#moreBeer').addEventListener('click', e =>{
                     <p>${r[i].phone}</p>
                     <h5>For business hours, reviews, and menus, <a href="${r[i].reviewlink}">click here</a></h5>
                     </div>
-                    <div class="content"><Strong>""</strong></div>
+                    <div class="content"><Strong>"${ranWords}"</strong></div>
                   </div>
                 </div>`
         document.querySelector('#beerResults').append(beerListing)
@@ -152,6 +146,7 @@ document.querySelector('#moreBeer').addEventListener('click', e =>{
         document.querySelector('#moreBeer').style.display = 'block'
       }
     })
+    .catch(console.error)
 })
 
 // Yelp API code
@@ -298,7 +293,9 @@ document.querySelector(`.search`).addEventListener('click', e => {
               }
             }
           })
+          .catch(console.error)
       })
+      .catch(console.error)
     document.querySelector(`.search2`).style.display = `block`
     document.querySelector(`.more`).style.display = `block`
   }
@@ -419,14 +416,16 @@ document.querySelector(`.search2`).addEventListener('click', e => {
             }
           }
         })
+        .catch(console.error)
     })
+    .catch(console.error)
 });
 
 // Multiple results button
 document.querySelector(`.more`).addEventListener('click', e => {
   document.querySelector(`#results`).innerHTML = ``
   searchInput = document.querySelector(`.input`).value
-  URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=10`;
+  URL = `https://api.yelp.com/v3/businesses/search?location=${searchInput}&limit=6`;
   queryURL = `https://cors-anywhere.herokuapp.com/${URL}`;
   fetch(queryURL, yelpObject)
     .then(r => r.json())

@@ -7,16 +7,12 @@ body {
     background: #F4FEFF;
 }
 
-.headerText {
+.headerText, .centered-card-content {
     text-align: center;
 }
 
 .navbar {
     background-color: #FF9543;
-}
-
-.navbar-item {
-    color: white;
 }
 
 .navlogo {
@@ -50,7 +46,6 @@ body {
     display: none;
     width: 40%;
     margin: auto;
-    margin-top: 100px;
     text-align: center;
 }
 
@@ -127,10 +122,6 @@ body {
     margin-bottom: 50px;
 }
 
-.hours {
-    margin-bottom: 20px;
-}
-
 .ratingsDiv {
     margin: auto;
     text-align: center;
@@ -147,8 +138,16 @@ body {
 }
 
 #resultSec {
-    margin-bottom: 100px;
     padding-top: 0;
+    margin-bottom: 100px;
+}
+
+#signupsection {
+    margin-bottom: 150px;
+}
+
+.ratingscontainer {
+    margin-bottom: 200px;
 }
 
 .checkbox-container {
@@ -173,10 +172,6 @@ body {
     background-color: #FF9543;
 }
 
-.footertext, strong, .ratemessagetext {
-    color: white;
-}
-
 @media only screen and (max-width: 600px) {
     #moreBeer {
         display: none;
@@ -187,9 +182,6 @@ body {
     }
     .btns {
         margin-bottom: 1000px;
-    }
-    .footer {
-        margin-top: 1000px;
     }
 }
 
@@ -223,8 +215,5 @@ body {
 @media only screen and (max-width: 1366px) {
     .mainLogo {
         text-align: center;
-    }
-    .navbar-item {
-        color: white
     }
 }
