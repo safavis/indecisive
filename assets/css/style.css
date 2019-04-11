@@ -147,8 +147,16 @@ body {
 }
 
 #resultSec {
-    margin-bottom: 100px;
     padding-top: 0;
+    margin-bottom: 100px;
+}
+
+#signupsection {
+    margin-bottom: 150px;
+}
+
+.ratingscontainer {
+    margin-bottom: 300px;
 }
 
 .checkbox-container {
@@ -187,9 +195,6 @@ body {
     }
     .btns {
         margin-bottom: 1000px;
-    }
-    .footer {
-        margin-top: 1000px;
     }
 }
 
