@@ -19,7 +19,7 @@ body {
     text-align: center;
 }
 
-.navbar {
+.navbar, .is-active{
     background-color: #0A0024;
 }
 
@@ -50,4 +50,8 @@ body {
     text-align: center;
     width: 80%;
     background-color: #0A0024;
+}
+
+.footertext, strong {
+    color: white;
 }

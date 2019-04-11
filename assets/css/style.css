@@ -7,16 +7,12 @@ body {
     background: #F4FEFF;
 }
 
-.headerText {
+.headerText, .centered-card-content {
     text-align: center;
 }
 
 .navbar {
     background-color: #FF9543;
-}
-
-.navbar-item {
-    color: white;
 }
 
 .navlogo {
@@ -126,10 +122,6 @@ body {
     margin-bottom: 50px;
 }
 
-.hours {
-    margin-bottom: 20px;
-}
-
 .ratingsDiv {
     margin: auto;
     text-align: center;
@@ -155,7 +147,7 @@ body {
 }
 
 .ratingscontainer {
-    margin-bottom: 300px;
+    margin-bottom: 200px;
 }
 
 .checkbox-container {
@@ -178,10 +170,6 @@ body {
     text-align: center;
     width: 50%;
     background-color: #FF9543;
-}
-
-.footertext, strong, .ratemessagetext {
-    color: white;
 }
 
 @media only screen and (max-width: 600px) {
@@ -227,8 +215,5 @@ body {
 @media only screen and (max-width: 1366px) {
     .mainLogo {
         text-align: center;
-    }
-    .navbar-item {
-        color: white
     }
 }
