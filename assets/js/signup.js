@@ -17,21 +17,20 @@ const deleteBtns = document.querySelectorAll('.delete');
 // Submit signup form to Firebase
 document.querySelector(`#signup`).addEventListener(`click`, e => {
   e.preventDefault()
-  let id = db.collection(`user_login`).doc().id
+  let id = db.collection(`user`).doc().id
   let name = document.querySelector(`.name`).value
-  let loggedin=true
   let email = document.querySelector(`.email`).value
   let username = document.querySelector(`.usernm`).value
   let password = document.querySelector(`.pass`).value
   if (name === `` || email === `` || username === `` || password === ``) {
     document.querySelector(`.is-danger`).style.display = `block`
   } else {
-    db.collection('user_login').doc(id).set({
-      name: name,
-      email: email,
-      loggedin:loggedin,
-      username: username,
-      password: password,
+    db.collection('user').doc(id).set({
+      'name': name,
+      'email': email,
+      'logg': 0,
+      'username': username,
+      'password': password
     })
     localStorage.setItem('name',id)
     document.querySelector(`.name`).value = ``

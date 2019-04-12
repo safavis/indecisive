@@ -475,25 +475,30 @@ let db=firebase.firestore()
 let people_on
 let me
 
-db.collection("user_login").onSnapshot(({docs})=>{
+db.collection('user').onSnapshot(({docs})=>{
+  document.querySelector(".greeting").innerHTML=``
+  document.querySelector(".loginoff_button").setAttribute('href',"./index.html")
   people_on=docs.filter(element=>{
-      return element.data().loggedin==true
+      return element.data().logg==1
   })
   me=people_on.filter(element=>{
-    console.log(`my name is${element.data().name}`)
     return element.id==localStorage.getItem('name')
   })
-  console.log(me.length)
+
   if(me.length==1)
   {
       document.querySelector(".loginoff_button").textContent="Log Out"
-      // document.querySelector(".loginoff_button").setAttribute('href',"./index.html")
-      console.log('we are loggonh out')
+      document.querySelector(".greeting").innerHTML=`
+      <p>
+      Welcome ${me[0].data().name}! 
+      </p>`
+      document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
   }
   else{
-    // document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
-    console.log('we are loggonh in')
-
+     document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
+    let el=me[0].data()
+    let id=me.id
+    el.logg=0
+    db.collection('user').doc(id).set(el)
   }
-  console.log(document.querySelector(".loginoff_button"))
 })
