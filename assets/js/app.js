@@ -492,10 +492,10 @@ db.collection('user').onSnapshot(({docs})=>{
       <p>
       Welcome ${me[0].data().name}! 
       </p>`
-      document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
+     // document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
   }
   else{
-     document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
+   //  document.querySelector(".loginoff_button").setAttribute('href',"./login.html")
     let el=me[0].data()
     let id=me.id
     el.logg=0

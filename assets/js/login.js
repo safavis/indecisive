@@ -55,7 +55,7 @@ document.querySelector("#contactforms").addEventListener('click',({target})=>{
                     el.logg=1
                     db.collection('user').doc(id).set(el)
                     localStorage.setItem('name',id)
-                      window.location.href="./login//.html"
+                   //   window.location.href="./Desktop/indecisive/login.html"
                   }
                 else
                 {
